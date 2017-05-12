@@ -4,14 +4,6 @@
 
 app\cmd.c
 
-drv\led.c
-
-drv\pwm.c
-
-hal\gpio.c
-
-hal\timer1.c
-
 hal\uart.c
 
 main.c

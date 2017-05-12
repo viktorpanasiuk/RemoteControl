@@ -1,201 +1,67 @@
 #include "app/cmd.h"
+#include "drv/led.h"
+#include "drv/pwm.h"
+#include "main.h"
 
-void SourceIndicatorOff(void)
+#include <avr/io.h>
+#include <avr/pgmspace.h>
+#include <stddef.h>
+
+const uint8_t ledIlluminationLevelTable[16] PROGMEM = {
+    [0] = LED_ILLUMINATION_LEVEL_0,
+    [1] = LED_ILLUMINATION_LEVEL_1,
+    [2] = LED_ILLUMINATION_LEVEL_2,
+    [3] = LED_ILLUMINATION_LEVEL_3,
+    [4] = LED_ILLUMINATION_LEVEL_4,
+    [5] = LED_ILLUMINATION_LEVEL_5,
+    [6] = LED_ILLUMINATION_LEVEL_6,
+    [7] = LED_ILLUMINATION_LEVEL_7,
+    [8] = LED_ILLUMINATION_LEVEL_8,
+    [9] = LED_ILLUMINATION_LEVEL_9,
+    [10] = LED_ILLUMINATION_LEVEL_10,
+    [11] = LED_ILLUMINATION_LEVEL_11,
+    [12] = LED_ILLUMINATION_LEVEL_12,
+    [13] = LED_ILLUMINATION_LEVEL_13,
+    [14] = LED_ILLUMINATION_LEVEL_14,
+    [15] = LED_ILLUMINATION_LEVEL_15,
+};
+
+typedef enum {
+    SOURCE_INDICATOR            = ((uint8_t) 0x09),
+    BUTTON_REPEAT_INTERVAL      = ((uint8_t) 0x0B),
+    PANEL_ILLUMINATION_LEVEL    = ((uint8_t) 0x0C),
+    AUDIO_SOURCE                = ((uint8_t) 0x0D),
+} UartRxCmd;
+
+static const Func cmd2func[] PROGMEM = {
+    [0x00 ... 0x0F]             = NULL,
+    [SOURCE_INDICATOR]          = SourceIndicator,
+    [BUTTON_REPEAT_INTERVAL]    = ButtonRepeatInterval,
+    [PANEL_ILLUMINATION_LEVEL]  = PanelIlluminationLevel,
+    [AUDIO_SOURCE]              = AudioSource,
+};
+
+void SourceIndicator(uint8_t param)
+{
+    ledOff();
+}
+
+void ButtonRepeatInterval(uint8_t interval)
 {
     
 }
 
-void ButtonRepeatInterval_0(void)
+void PanelIlluminationLevel(uint8_t level)
 {
-    
+    setPwmLvl(pgm_read_byte(&ledIlluminationLevelTable[level]));
 }
 
-void ButtonRepeatInterval_1(void)
+void AudioSource(uint8_t source)
 {
-    
+    ledSet((LedSource)source, ON);
 }
 
-void ButtonRepeatInterval_2(void)
+Func getActionByRxCommand(uint8_t command)
 {
-    
-}
-
-void ButtonRepeatInterval_3(void)
-{
-    
-}
-
-void ButtonRepeatInterval_4(void)
-{
-    
-}
-
-void ButtonRepeatInterval_5(void)
-{
-    
-}
-
-void ButtonRepeatInterval_6(void)
-{
-    
-}
-
-void ButtonRepeatInterval_7(void)
-{
-    
-}
-
-void ButtonRepeatInterval_8(void)
-{
-    
-}
-
-void ButtonRepeatInterval_9(void)
-{
-    
-}
-
-void ButtonRepeatInterval_10(void)
-{
-    
-}
-
-void ButtonRepeatInterval_11(void)
-{
-    
-}
-
-void ButtonRepeatInterval_12(void)
-{
-    
-}
-
-void ButtonRepeatInterval_13(void)
-{
-    
-}
-
-void ButtonRepeatInterval_14(void)
-{
-    
-}
-
-void ButtonRepeatInterval_15(void)
-{
-    
-}
-
-void PanelIlluminationLevel_0(void)
-{
-    
-}
-
-void PanelIlluminationLevel_1(void)
-{
-    
-}
-
-void PanelIlluminationLevel_2(void)
-{
-    
-}
-
-void PanelIlluminationLevel_3(void)
-{
-    
-}
-
-void PanelIlluminationLevel_4(void)
-{
-    
-}
-
-void PanelIlluminationLevel_5(void)
-{
-    
-}
-
-void PanelIlluminationLevel_6(void)
-{
-    
-}
-
-void PanelIlluminationLevel_7(void)
-{
-    
-}
-
-void PanelIlluminationLevel_8(void)
-{
-    
-}
-
-void PanelIlluminationLevel_9(void)
-{
-    
-}
-
-void PanelIlluminationLevel_10(void)
-{
-    
-}
-
-void PanelIlluminationLevel_11(void)
-{
-    
-}
-
-void PanelIlluminationLevel_12(void)
-{
-    
-}
-
-void PanelIlluminationLevel_13(void)
-{
-    
-}
-
-void PanelIlluminationLevel_14(void)
-{
-    
-}
-
-void PanelIlluminationLevel_15(void)
-{
-    
-}
-
-void AudioSource_AM(void)
-{
-    
-}
-
-void AudioSource_FM(void)
-{
-    
-}
-
-void AudioSource_WB(void)
-{
-    
-}
-
-void AudioSource_SXM(void)
-{
-    
-}
-
-void AudioSource_BT(void)
-{
-    
-}
-
-void AudioSource_AUX(void)
-{
-    
-}
-
-void AudioSource_USB(void)
-{
-    
+    return (Func)pgm_read_word(&cmd2func[command]);
 }

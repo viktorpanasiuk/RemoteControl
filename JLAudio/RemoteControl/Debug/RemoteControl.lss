@@ -1,0 +1,784 @@
+
+RemoteControl.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000448  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000004bc  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000022  00800060  00800060  000004bc  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000004bc  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000004ec  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000001c8  00000000  00000000  00000528  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000db9  00000000  00000000  000006f0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000007a6  00000000  00000000  000014a9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000701  00000000  00000000  00001c4f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000394  00000000  00000000  00002350  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000ae0  00000000  00000000  000026e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000294  00000000  00000000  000031c4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000001a0  00000000  00000000  00003458  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c1       	rjmp	.+548    	; 0x226 <__ctors_end>
+   2:	21 c1       	rjmp	.+578    	; 0x246 <__bad_interrupt>
+   4:	20 c1       	rjmp	.+576    	; 0x246 <__bad_interrupt>
+   6:	1f c1       	rjmp	.+574    	; 0x246 <__bad_interrupt>
+   8:	1e c1       	rjmp	.+572    	; 0x246 <__bad_interrupt>
+   a:	1d c1       	rjmp	.+570    	; 0x246 <__bad_interrupt>
+   c:	1c c1       	rjmp	.+568    	; 0x246 <__bad_interrupt>
+   e:	1b c1       	rjmp	.+566    	; 0x246 <__bad_interrupt>
+  10:	1a c1       	rjmp	.+564    	; 0x246 <__bad_interrupt>
+  12:	19 c1       	rjmp	.+562    	; 0x246 <__bad_interrupt>
+  14:	18 c1       	rjmp	.+560    	; 0x246 <__bad_interrupt>
+  16:	49 c1       	rjmp	.+658    	; 0x2aa <__vector_11>
+  18:	16 c1       	rjmp	.+556    	; 0x246 <__bad_interrupt>
+  1a:	15 c1       	rjmp	.+554    	; 0x246 <__bad_interrupt>
+  1c:	14 c1       	rjmp	.+552    	; 0x246 <__bad_interrupt>
+  1e:	13 c1       	rjmp	.+550    	; 0x246 <__bad_interrupt>
+  20:	12 c1       	rjmp	.+548    	; 0x246 <__bad_interrupt>
+  22:	11 c1       	rjmp	.+546    	; 0x246 <__bad_interrupt>
+  24:	10 c1       	rjmp	.+544    	; 0x246 <__bad_interrupt>
+
+00000026 <__trampolines_end>:
+	...
+ 15a:	24 01       	movw	r4, r8
+	...
+ 184:	00 00       	nop
+ 186:	25 01       	movw	r4, r10
+ 188:	26 01       	movw	r4, r12
+ 18a:	27 01       	movw	r4, r14
+ 18c:	28 01       	movw	r4, r16
+ 18e:	29 01       	movw	r4, r18
+ 190:	2a 01       	movw	r4, r20
+ 192:	2b 01       	movw	r4, r22
+ 194:	2c 01       	movw	r4, r24
+ 196:	2d 01       	movw	r4, r26
+ 198:	2e 01       	movw	r4, r28
+ 19a:	2f 01       	movw	r4, r30
+ 19c:	30 01       	movw	r6, r0
+ 19e:	31 01       	movw	r6, r2
+ 1a0:	32 01       	movw	r6, r4
+ 1a2:	33 01       	movw	r6, r6
+ 1a4:	34 01       	movw	r6, r8
+ 1a6:	35 01       	movw	r6, r10
+ 1a8:	36 01       	movw	r6, r12
+ 1aa:	37 01       	movw	r6, r14
+ 1ac:	38 01       	movw	r6, r16
+ 1ae:	39 01       	movw	r6, r18
+ 1b0:	3a 01       	movw	r6, r20
+ 1b2:	3b 01       	movw	r6, r22
+ 1b4:	3c 01       	movw	r6, r24
+ 1b6:	3d 01       	movw	r6, r26
+ 1b8:	3e 01       	movw	r6, r28
+ 1ba:	3f 01       	movw	r6, r30
+ 1bc:	40 01       	movw	r8, r0
+ 1be:	41 01       	movw	r8, r2
+ 1c0:	42 01       	movw	r8, r4
+ 1c2:	43 01       	movw	r8, r6
+ 1c4:	44 01       	movw	r8, r8
+ 1c6:	45 01       	movw	r8, r10
+ 1c8:	46 01       	movw	r8, r12
+ 1ca:	47 01       	movw	r8, r14
+ 1cc:	48 01       	movw	r8, r16
+ 1ce:	49 01       	movw	r8, r18
+ 1d0:	4a 01       	movw	r8, r20
+ 1d2:	4b 01       	movw	r8, r22
+	...
+
+00000226 <__ctors_end>:
+ 226:	11 24       	eor	r1, r1
+ 228:	1f be       	out	0x3f, r1	; 63
+ 22a:	cf e5       	ldi	r28, 0x5F	; 95
+ 22c:	d4 e0       	ldi	r29, 0x04	; 4
+ 22e:	de bf       	out	0x3e, r29	; 62
+ 230:	cd bf       	out	0x3d, r28	; 61
+
+00000232 <__do_clear_bss>:
+ 232:	20 e0       	ldi	r18, 0x00	; 0
+ 234:	a0 e6       	ldi	r26, 0x60	; 96
+ 236:	b0 e0       	ldi	r27, 0x00	; 0
+ 238:	01 c0       	rjmp	.+2      	; 0x23c <.do_clear_bss_start>
+
+0000023a <.do_clear_bss_loop>:
+ 23a:	1d 92       	st	X+, r1
+
+0000023c <.do_clear_bss_start>:
+ 23c:	a2 38       	cpi	r26, 0x82	; 130
+ 23e:	b2 07       	cpc	r27, r18
+ 240:	e1 f7       	brne	.-8      	; 0x23a <.do_clear_bss_loop>
+ 242:	95 d0       	rcall	.+298    	; 0x36e <main>
+ 244:	ff c0       	rjmp	.+510    	; 0x444 <_exit>
+
+00000246 <__bad_interrupt>:
+ 246:	dc ce       	rjmp	.-584    	; 0x0 <__vectors>
+
+00000248 <SourceIndicatorOff>:
+#include "app/cmd.h"
+
+void SourceIndicatorOff(void)
+{
+ 248:	08 95       	ret
+
+0000024a <ButtonRepeatInterval_0>:
+    
+}
+
+void ButtonRepeatInterval_0(void)
+{
+ 24a:	08 95       	ret
+
+0000024c <ButtonRepeatInterval_1>:
+    
+}
+
+void ButtonRepeatInterval_1(void)
+{
+ 24c:	08 95       	ret
+
+0000024e <ButtonRepeatInterval_2>:
+    
+}
+
+void ButtonRepeatInterval_2(void)
+{
+ 24e:	08 95       	ret
+
+00000250 <ButtonRepeatInterval_3>:
+    
+}
+
+void ButtonRepeatInterval_3(void)
+{
+ 250:	08 95       	ret
+
+00000252 <ButtonRepeatInterval_4>:
+    
+}
+
+void ButtonRepeatInterval_4(void)
+{
+ 252:	08 95       	ret
+
+00000254 <ButtonRepeatInterval_5>:
+    
+}
+
+void ButtonRepeatInterval_5(void)
+{
+ 254:	08 95       	ret
+
+00000256 <ButtonRepeatInterval_6>:
+    
+}
+
+void ButtonRepeatInterval_6(void)
+{
+ 256:	08 95       	ret
+
+00000258 <ButtonRepeatInterval_7>:
+    
+}
+
+void ButtonRepeatInterval_7(void)
+{
+ 258:	08 95       	ret
+
+0000025a <ButtonRepeatInterval_8>:
+    
+}
+
+void ButtonRepeatInterval_8(void)
+{
+ 25a:	08 95       	ret
+
+0000025c <ButtonRepeatInterval_9>:
+    
+}
+
+void ButtonRepeatInterval_9(void)
+{
+ 25c:	08 95       	ret
+
+0000025e <ButtonRepeatInterval_10>:
+    
+}
+
+void ButtonRepeatInterval_10(void)
+{
+ 25e:	08 95       	ret
+
+00000260 <ButtonRepeatInterval_11>:
+    
+}
+
+void ButtonRepeatInterval_11(void)
+{
+ 260:	08 95       	ret
+
+00000262 <ButtonRepeatInterval_12>:
+    
+}
+
+void ButtonRepeatInterval_12(void)
+{
+ 262:	08 95       	ret
+
+00000264 <ButtonRepeatInterval_13>:
+    
+}
+
+void ButtonRepeatInterval_13(void)
+{
+ 264:	08 95       	ret
+
+00000266 <ButtonRepeatInterval_14>:
+    
+}
+
+void ButtonRepeatInterval_14(void)
+{
+ 266:	08 95       	ret
+
+00000268 <ButtonRepeatInterval_15>:
+    
+}
+
+void ButtonRepeatInterval_15(void)
+{
+ 268:	08 95       	ret
+
+0000026a <PanelIlluminationLevel_0>:
+    
+}
+
+void PanelIlluminationLevel_0(void)
+{
+ 26a:	08 95       	ret
+
+0000026c <PanelIlluminationLevel_1>:
+    
+}
+
+void PanelIlluminationLevel_1(void)
+{
+ 26c:	08 95       	ret
+
+0000026e <PanelIlluminationLevel_2>:
+    
+}
+
+void PanelIlluminationLevel_2(void)
+{
+ 26e:	08 95       	ret
+
+00000270 <PanelIlluminationLevel_3>:
+    
+}
+
+void PanelIlluminationLevel_3(void)
+{
+ 270:	08 95       	ret
+
+00000272 <PanelIlluminationLevel_4>:
+    
+}
+
+void PanelIlluminationLevel_4(void)
+{
+ 272:	08 95       	ret
+
+00000274 <PanelIlluminationLevel_5>:
+    
+}
+
+void PanelIlluminationLevel_5(void)
+{
+ 274:	08 95       	ret
+
+00000276 <PanelIlluminationLevel_6>:
+    
+}
+
+void PanelIlluminationLevel_6(void)
+{
+ 276:	08 95       	ret
+
+00000278 <PanelIlluminationLevel_7>:
+    
+}
+
+void PanelIlluminationLevel_7(void)
+{
+ 278:	08 95       	ret
+
+0000027a <PanelIlluminationLevel_8>:
+    
+}
+
+void PanelIlluminationLevel_8(void)
+{
+ 27a:	08 95       	ret
+
+0000027c <PanelIlluminationLevel_9>:
+    
+}
+
+void PanelIlluminationLevel_9(void)
+{
+ 27c:	08 95       	ret
+
+0000027e <PanelIlluminationLevel_10>:
+    
+}
+
+void PanelIlluminationLevel_10(void)
+{
+ 27e:	08 95       	ret
+
+00000280 <PanelIlluminationLevel_11>:
+    
+}
+
+void PanelIlluminationLevel_11(void)
+{
+ 280:	08 95       	ret
+
+00000282 <PanelIlluminationLevel_12>:
+    
+}
+
+void PanelIlluminationLevel_12(void)
+{
+ 282:	08 95       	ret
+
+00000284 <PanelIlluminationLevel_13>:
+    
+}
+
+void PanelIlluminationLevel_13(void)
+{
+ 284:	08 95       	ret
+
+00000286 <PanelIlluminationLevel_14>:
+    
+}
+
+void PanelIlluminationLevel_14(void)
+{
+ 286:	08 95       	ret
+
+00000288 <PanelIlluminationLevel_15>:
+    
+}
+
+void PanelIlluminationLevel_15(void)
+{
+ 288:	08 95       	ret
+
+0000028a <AudioSource_AM>:
+    
+}
+
+void AudioSource_AM(void)
+{
+ 28a:	08 95       	ret
+
+0000028c <AudioSource_FM>:
+    
+}
+
+void AudioSource_FM(void)
+{
+ 28c:	08 95       	ret
+
+0000028e <AudioSource_WB>:
+    
+}
+
+void AudioSource_WB(void)
+{
+ 28e:	08 95       	ret
+
+00000290 <AudioSource_SXM>:
+    
+}
+
+void AudioSource_SXM(void)
+{
+ 290:	08 95       	ret
+
+00000292 <AudioSource_BT>:
+    
+}
+
+void AudioSource_BT(void)
+{
+ 292:	08 95       	ret
+
+00000294 <AudioSource_AUX>:
+    
+}
+
+void AudioSource_AUX(void)
+{
+ 294:	08 95       	ret
+
+00000296 <AudioSource_USB>:
+    
+}
+
+void AudioSource_USB(void)
+{
+ 296:	08 95       	ret
+
+00000298 <uartInit>:
+extern volatile UartRx uartRx;
+
+void uartInit(void)
+{
+    /*Set baud rate */
+    UBRRH = (uint8_t)(UBRR >> 8);
+ 298:	10 bc       	out	0x20, r1	; 32
+    UBRRL = (uint8_t)(UBRR >> 0);
+ 29a:	80 e1       	ldi	r24, 0x10	; 16
+ 29c:	89 b9       	out	0x09, r24	; 9
+    /* Set double speed */
+    UCSRA |= (1 << U2X);
+ 29e:	59 9a       	sbi	0x0b, 1	; 11
+    /* Enable receiver and transmitter */
+    UCSRB = (1 << RXCIE) | (1 << RXEN) | (1 << TXEN);
+ 2a0:	88 e9       	ldi	r24, 0x98	; 152
+ 2a2:	8a b9       	out	0x0a, r24	; 10
+    /* Set frame format: 8 data, 1 stop bit */
+    UCSRC = (1 << URSEL) | (3 << UCSZ0);
+ 2a4:	86 e8       	ldi	r24, 0x86	; 134
+ 2a6:	80 bd       	out	0x20, r24	; 32
+ 2a8:	08 95       	ret
+
+000002aa <__vector_11>:
+}
+
+ISR(USART_RXC_vect)
+{
+ 2aa:	1f 92       	push	r1
+ 2ac:	0f 92       	push	r0
+ 2ae:	0f b6       	in	r0, 0x3f	; 63
+ 2b0:	0f 92       	push	r0
+ 2b2:	11 24       	eor	r1, r1
+ 2b4:	2f 93       	push	r18
+ 2b6:	3f 93       	push	r19
+ 2b8:	4f 93       	push	r20
+ 2ba:	5f 93       	push	r21
+ 2bc:	6f 93       	push	r22
+ 2be:	7f 93       	push	r23
+ 2c0:	8f 93       	push	r24
+ 2c2:	9f 93       	push	r25
+ 2c4:	af 93       	push	r26
+ 2c6:	bf 93       	push	r27
+ 2c8:	ef 93       	push	r30
+ 2ca:	ff 93       	push	r31
+ 2cc:	cf 93       	push	r28
+ 2ce:	df 93       	push	r29
+ 2d0:	00 d0       	rcall	.+0      	; 0x2d2 <__vector_11+0x28>
+ 2d2:	00 d0       	rcall	.+0      	; 0x2d4 <__vector_11+0x2a>
+ 2d4:	cd b7       	in	r28, 0x3d	; 61
+ 2d6:	de b7       	in	r29, 0x3e	; 62
+    static UartRxState state = START;
+    static uint8_t command;
+
+    switch (state) {
+ 2d8:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <state.1915>
+ 2dc:	81 30       	cpi	r24, 0x01	; 1
+ 2de:	61 f0       	breq	.+24     	; 0x2f8 <__vector_11+0x4e>
+ 2e0:	18 f0       	brcs	.+6      	; 0x2e8 <__vector_11+0x3e>
+ 2e2:	82 30       	cpi	r24, 0x02	; 2
+ 2e4:	81 f0       	breq	.+32     	; 0x306 <__vector_11+0x5c>
+ 2e6:	2a c0       	rjmp	.+84     	; 0x33c <__vector_11+0x92>
+
+        /* Start message */
+        case START:
+            state = (UDR == MESSAGE_START) ? COMMAND : START;
+ 2e8:	9c b1       	in	r25, 0x0c	; 12
+ 2ea:	81 e0       	ldi	r24, 0x01	; 1
+ 2ec:	99 38       	cpi	r25, 0x89	; 137
+ 2ee:	09 f0       	breq	.+2      	; 0x2f2 <__vector_11+0x48>
+ 2f0:	80 e0       	ldi	r24, 0x00	; 0
+ 2f2:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <state.1915>
+            break;
+ 2f6:	24 c0       	rjmp	.+72     	; 0x340 <__vector_11+0x96>
+
+        /* Command receiving */
+        case COMMAND:
+            command = UDR;
+ 2f8:	8c b1       	in	r24, 0x0c	; 12
+ 2fa:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <_edata>
+            state = CHECKSUM;
+ 2fe:	82 e0       	ldi	r24, 0x02	; 2
+ 300:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <state.1915>
+            break;
+ 304:	1d c0       	rjmp	.+58     	; 0x340 <__vector_11+0x96>
+
+        /* Checksum checking */
+        case CHECKSUM:
+            if (command + MESSAGE_START == UDR) {
+ 306:	e0 91 60 00 	lds	r30, 0x0060	; 0x800060 <_edata>
+ 30a:	f0 e0       	ldi	r31, 0x00	; 0
+ 30c:	8c b1       	in	r24, 0x0c	; 12
+ 30e:	9f 01       	movw	r18, r30
+ 310:	27 57       	subi	r18, 0x77	; 119
+ 312:	3f 4f       	sbci	r19, 0xFF	; 255
+ 314:	90 e0       	ldi	r25, 0x00	; 0
+ 316:	28 17       	cp	r18, r24
+ 318:	39 07       	cpc	r19, r25
+ 31a:	69 f4       	brne	.+26     	; 0x336 <__vector_11+0x8c>
+                QueueElement element = {
+ 31c:	1a 82       	std	Y+2, r1	; 0x02
+ 31e:	19 82       	std	Y+1, r1	; 0x01
+                    .cnt = 0,
+                    .func = (Func)pgm_read_word(&cmd2func[command]),
+ 320:	ee 0f       	add	r30, r30
+ 322:	ff 1f       	adc	r31, r31
+ 324:	ea 5d       	subi	r30, 0xDA	; 218
+ 326:	ff 4f       	sbci	r31, 0xFF	; 255
+ 328:	85 91       	lpm	r24, Z+
+ 32a:	94 91       	lpm	r25, Z
+            break;
+
+        /* Checksum checking */
+        case CHECKSUM:
+            if (command + MESSAGE_START == UDR) {
+                QueueElement element = {
+ 32c:	9c 83       	std	Y+4, r25	; 0x04
+ 32e:	8b 83       	std	Y+3, r24	; 0x03
+                    .cnt = 0,
+                    .func = (Func)pgm_read_word(&cmd2func[command]),
+                };
+                setQueueElement(&element);
+ 330:	ce 01       	movw	r24, r28
+ 332:	01 96       	adiw	r24, 0x01	; 1
+ 334:	31 d0       	rcall	.+98     	; 0x398 <setQueueElement>
+            }
+            state = START;
+ 336:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <state.1915>
+            break;
+ 33a:	02 c0       	rjmp	.+4      	; 0x340 <__vector_11+0x96>
+
+        /* Default state */
+        default:
+            state = START;
+ 33c:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <state.1915>
+            break;
+    }
+}
+ 340:	0f 90       	pop	r0
+ 342:	0f 90       	pop	r0
+ 344:	0f 90       	pop	r0
+ 346:	0f 90       	pop	r0
+ 348:	df 91       	pop	r29
+ 34a:	cf 91       	pop	r28
+ 34c:	ff 91       	pop	r31
+ 34e:	ef 91       	pop	r30
+ 350:	bf 91       	pop	r27
+ 352:	af 91       	pop	r26
+ 354:	9f 91       	pop	r25
+ 356:	8f 91       	pop	r24
+ 358:	7f 91       	pop	r23
+ 35a:	6f 91       	pop	r22
+ 35c:	5f 91       	pop	r21
+ 35e:	4f 91       	pop	r20
+ 360:	3f 91       	pop	r19
+ 362:	2f 91       	pop	r18
+ 364:	0f 90       	pop	r0
+ 366:	0f be       	out	0x3f, r0	; 63
+ 368:	0f 90       	pop	r0
+ 36a:	1f 90       	pop	r1
+ 36c:	18 95       	reti
+
+0000036e <main>:
+#include "hal/uart.h"
+/* OS */
+#include "os/queue.h"
+
+int main(void)
+{
+ 36e:	cf 93       	push	r28
+ 370:	df 93       	push	r29
+ 372:	00 d0       	rcall	.+0      	; 0x374 <main+0x6>
+ 374:	00 d0       	rcall	.+0      	; 0x376 <main+0x8>
+ 376:	cd b7       	in	r28, 0x3d	; 61
+ 378:	de b7       	in	r29, 0x3e	; 62
+    QueueElement element;
+    
+    uartInit();
+ 37a:	8e df       	rcall	.-228    	; 0x298 <uartInit>
+    
+    DDRD |= _BV(DDD6);
+ 37c:	8e 9a       	sbi	0x11, 6	; 17
+    DDRB |= _BV(DDB2);
+ 37e:	ba 9a       	sbi	0x17, 2	; 23
+
+    PORTD |= _BV(PD6);
+ 380:	96 9a       	sbi	0x12, 6	; 18
+    PORTB &= ~_BV(PB2);
+ 382:	c2 98       	cbi	0x18, 2	; 24
+
+    sei(); // Global enable interrupt
+ 384:	78 94       	sei
+    /* Replace with your application code */
+    while (1)
+    {
+        if (getQueueElement(&element) == true) {
+ 386:	ce 01       	movw	r24, r28
+ 388:	01 96       	adiw	r24, 0x01	; 1
+ 38a:	36 d0       	rcall	.+108    	; 0x3f8 <getQueueElement>
+ 38c:	88 23       	and	r24, r24
+ 38e:	d9 f3       	breq	.-10     	; 0x386 <main+0x18>
+            (* element.func)();
+ 390:	eb 81       	ldd	r30, Y+3	; 0x03
+ 392:	fc 81       	ldd	r31, Y+4	; 0x04
+ 394:	09 95       	icall
+ 396:	f7 cf       	rjmp	.-18     	; 0x386 <main+0x18>
+
+00000398 <setQueueElement>:
+#define SIZE_OF_QUEUE ((uint8_t) 8)
+
+static QueueElement queue[SIZE_OF_QUEUE];
+
+bool setQueueElement(QueueElement * element)
+{
+ 398:	cf 93       	push	r28
+ 39a:	df 93       	push	r29
+    for (uint8_t i = 0; i < SIZE_OF_QUEUE; ++i) {
+        if (queue[i].func == NULL) {
+ 39c:	20 91 64 00 	lds	r18, 0x0064	; 0x800064 <queue+0x2>
+ 3a0:	30 91 65 00 	lds	r19, 0x0065	; 0x800065 <queue+0x3>
+ 3a4:	23 2b       	or	r18, r19
+ 3a6:	51 f0       	breq	.+20     	; 0x3bc <setQueueElement+0x24>
+ 3a8:	e8 e6       	ldi	r30, 0x68	; 104
+ 3aa:	f0 e0       	ldi	r31, 0x00	; 0
+ 3ac:	21 e0       	ldi	r18, 0x01	; 1
+ 3ae:	30 e0       	ldi	r19, 0x00	; 0
+ 3b0:	b9 01       	movw	r22, r18
+ 3b2:	40 81       	ld	r20, Z
+ 3b4:	51 81       	ldd	r21, Z+1	; 0x01
+ 3b6:	45 2b       	or	r20, r21
+ 3b8:	a9 f4       	brne	.+42     	; 0x3e4 <setQueueElement+0x4c>
+ 3ba:	02 c0       	rjmp	.+4      	; 0x3c0 <setQueueElement+0x28>
+ 3bc:	60 e0       	ldi	r22, 0x00	; 0
+ 3be:	70 e0       	ldi	r23, 0x00	; 0
+            queue[i] = *element;
+ 3c0:	66 0f       	add	r22, r22
+ 3c2:	77 1f       	adc	r23, r23
+ 3c4:	66 0f       	add	r22, r22
+ 3c6:	77 1f       	adc	r23, r23
+ 3c8:	fb 01       	movw	r30, r22
+ 3ca:	ee 59       	subi	r30, 0x9E	; 158
+ 3cc:	ff 4f       	sbci	r31, 0xFF	; 255
+ 3ce:	ec 01       	movw	r28, r24
+ 3d0:	88 81       	ld	r24, Y
+ 3d2:	99 81       	ldd	r25, Y+1	; 0x01
+ 3d4:	aa 81       	ldd	r26, Y+2	; 0x02
+ 3d6:	bb 81       	ldd	r27, Y+3	; 0x03
+ 3d8:	80 83       	st	Z, r24
+ 3da:	91 83       	std	Z+1, r25	; 0x01
+ 3dc:	a2 83       	std	Z+2, r26	; 0x02
+ 3de:	b3 83       	std	Z+3, r27	; 0x03
+            return true;
+ 3e0:	81 e0       	ldi	r24, 0x01	; 1
+ 3e2:	07 c0       	rjmp	.+14     	; 0x3f2 <setQueueElement+0x5a>
+ 3e4:	2f 5f       	subi	r18, 0xFF	; 255
+ 3e6:	3f 4f       	sbci	r19, 0xFF	; 255
+ 3e8:	34 96       	adiw	r30, 0x04	; 4
+
+static QueueElement queue[SIZE_OF_QUEUE];
+
+bool setQueueElement(QueueElement * element)
+{
+    for (uint8_t i = 0; i < SIZE_OF_QUEUE; ++i) {
+ 3ea:	28 30       	cpi	r18, 0x08	; 8
+ 3ec:	31 05       	cpc	r19, r1
+ 3ee:	01 f7       	brne	.-64     	; 0x3b0 <setQueueElement+0x18>
+        if (queue[i].func == NULL) {
+            queue[i] = *element;
+            return true;
+        }
+    }
+    return false;
+ 3f0:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 3f2:	df 91       	pop	r29
+ 3f4:	cf 91       	pop	r28
+ 3f6:	08 95       	ret
+
+000003f8 <getQueueElement>:
+
+bool getQueueElement(QueueElement * element)
+{
+    if (queue[0].func != NULL) {
+ 3f8:	20 91 64 00 	lds	r18, 0x0064	; 0x800064 <queue+0x2>
+ 3fc:	30 91 65 00 	lds	r19, 0x0065	; 0x800065 <queue+0x3>
+ 400:	23 2b       	or	r18, r19
+ 402:	f1 f0       	breq	.+60     	; 0x440 <__LOCK_REGION_LENGTH__+0x40>
+        *element = queue[0];
+ 404:	40 91 62 00 	lds	r20, 0x0062	; 0x800062 <queue>
+ 408:	50 91 63 00 	lds	r21, 0x0063	; 0x800063 <queue+0x1>
+ 40c:	60 91 64 00 	lds	r22, 0x0064	; 0x800064 <queue+0x2>
+ 410:	70 91 65 00 	lds	r23, 0x0065	; 0x800065 <queue+0x3>
+ 414:	fc 01       	movw	r30, r24
+ 416:	40 83       	st	Z, r20
+ 418:	51 83       	std	Z+1, r21	; 0x01
+ 41a:	62 83       	std	Z+2, r22	; 0x02
+ 41c:	73 83       	std	Z+3, r23	; 0x03
+ 41e:	e2 e6       	ldi	r30, 0x62	; 98
+ 420:	f0 e0       	ldi	r31, 0x00	; 0
+ 422:	2e e7       	ldi	r18, 0x7E	; 126
+ 424:	30 e0       	ldi	r19, 0x00	; 0
+        for (uint8_t i = 1; i < SIZE_OF_QUEUE; ++i) {
+            queue[i-1] = queue[i];
+ 426:	84 81       	ldd	r24, Z+4	; 0x04
+ 428:	95 81       	ldd	r25, Z+5	; 0x05
+ 42a:	a6 81       	ldd	r26, Z+6	; 0x06
+ 42c:	b7 81       	ldd	r27, Z+7	; 0x07
+ 42e:	81 93       	st	Z+, r24
+ 430:	91 93       	st	Z+, r25
+ 432:	a1 93       	st	Z+, r26
+ 434:	b1 93       	st	Z+, r27
+
+bool getQueueElement(QueueElement * element)
+{
+    if (queue[0].func != NULL) {
+        *element = queue[0];
+        for (uint8_t i = 1; i < SIZE_OF_QUEUE; ++i) {
+ 436:	e2 17       	cp	r30, r18
+ 438:	f3 07       	cpc	r31, r19
+ 43a:	a9 f7       	brne	.-22     	; 0x426 <__LOCK_REGION_LENGTH__+0x26>
+            queue[i-1] = queue[i];
+        }
+        return true;
+ 43c:	81 e0       	ldi	r24, 0x01	; 1
+ 43e:	08 95       	ret
+    }
+    return false;
+ 440:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 442:	08 95       	ret
+
+00000444 <_exit>:
+ 444:	f8 94       	cli
+
+00000446 <__stop_program>:
+ 446:	ff cf       	rjmp	.-2      	; 0x446 <__stop_program>

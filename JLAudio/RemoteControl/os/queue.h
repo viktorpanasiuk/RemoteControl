@@ -5,11 +5,13 @@
 #include <avr/io.h>
 
 typedef uint16_t Cnt;
-typedef void (* Func)(void);
+typedef void (* Func)(uint8_t param);
+typedef uint8_t Param;
 
 typedef struct {
     Cnt cnt;
     Func func;
+    Param param;
 } QueueElement;
 
 bool setQueueElement(QueueElement * element);
