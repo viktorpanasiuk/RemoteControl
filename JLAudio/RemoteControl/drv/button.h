@@ -13,10 +13,16 @@ typedef enum {
 } ButtonSource;
 
 typedef enum {
-    RELEASED,
     PRESSED,
+    RELEASED,
 } ButtonState;
 
+typedef enum {
+    SINGLE,
+    HOLD,
+} ButtonAction;
+
 void buttonFsm(void);
+void buttonInit(void);
 
 #endif /* BUTTON_H_ */

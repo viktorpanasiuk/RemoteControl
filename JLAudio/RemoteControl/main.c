@@ -21,6 +21,7 @@ int main(void)
     ledInit();
     pwmInit();
     tim2Init();
+    buttonInit();
 
     sei(); // Global enable interrupt
     /* Replace with your application code */

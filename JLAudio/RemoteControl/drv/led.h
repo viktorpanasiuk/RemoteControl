@@ -22,6 +22,6 @@ typedef enum {
 } LedState;
 
 void ledInit(void);
-void switchLedTo(LedSource nextSource);
+void switchLedTo(LedSource source);
 
 #endif /* LED_H_ */

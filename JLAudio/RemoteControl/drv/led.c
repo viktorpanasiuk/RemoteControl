@@ -27,7 +27,7 @@ static void setLed(LedSource source, LedState state)
 
 void ledInit(void)
 {
-    for(LedSource source = AM; source < NUM_OF_LEDS; ++source) {
+    for(LedSource source = 0; source < NUM_OF(led); ++source) {
         GpioStruct * gpio = getGpioStructFromFlash(&led[source]);
 
         setGpioDirection(gpio, OUTPUT);
@@ -35,12 +35,12 @@ void ledInit(void)
     }
 }
 
-void switchLedTo(LedSource nextSource)
+void switchLedTo(LedSource source)
 {
-    if (nextSource != prevSource) {
+    if (source != prevSource) {
         if (prevState == ON)
             setLed(prevSource, prevState = OFF);
-        if ((prevSource = nextSource) != NONE)
-            setLed(nextSource, prevState = ON);
+        if ((prevSource = source) != NONE)
+            setLed(source, prevState = ON);
     }
 }

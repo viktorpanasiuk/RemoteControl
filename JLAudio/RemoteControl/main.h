@@ -8,6 +8,8 @@
 #define F_OSC 8000000UL // 8 MHz
 #define TICK_PERIOD 1000UL // 1000 us
 
+#define NUM_OF(array) (sizeof(array) / sizeof(array[0]))
+
 #define LED_ILLUMINATION_LEVEL_0    ((uint8_t) 0)
 #define LED_ILLUMINATION_LEVEL_1    ((uint8_t) 2)
 #define LED_ILLUMINATION_LEVEL_2    ((uint8_t) 4)
