@@ -5,37 +5,8 @@
 #include <avr/interrupt.h>
 #include <stdbool.h>
 
-#define LED_DDRx_AM     DDRD
-#define LED_DDRx_FM     DDRD
-#define LED_DDRx_WB     DDRD
-#define LED_DDRx_SXM    DDRD
-#define LED_DDRx_BT     DDRD
-#define LED_DDRx_AUX    DDRD
-#define LED_DDRx_USB    DDRB
-
-#define LED_DDxn_AM     DDD2
-#define LED_DDxn_FM     DDD3
-#define LED_DDxn_WB     DDD4
-#define LED_DDxn_SXM    DDD5
-#define LED_DDxn_BT     DDD6
-#define LED_DDxn_AUX    DDD7
-#define LED_DDxn_USB    DDB0
-
-#define LED_PORTx_AM    PORTD
-#define LED_PORTx_FM    PORTD
-#define LED_PORTx_WB    PORTD
-#define LED_PORTx_SXM   PORTD
-#define LED_PORTx_BT    PORTD
-#define LED_PORTx_AUX   PORTD
-#define LED_PORTx_USB   PORTB
-
-#define LED_Pxn_AM      PD2
-#define LED_Pxn_FM      PD3
-#define LED_Pxn_WB      PD4
-#define LED_Pxn_SXM     PD5
-#define LED_Pxn_BT      PD6
-#define LED_Pxn_AUX     PD7
-#define LED_Pxn_USB     PB0
+#define F_OSC 8000000UL // 8 MHz
+#define TICK_PERIOD 1000UL // 1000 us
 
 #define LED_ILLUMINATION_LEVEL_0    ((uint8_t) 0)
 #define LED_ILLUMINATION_LEVEL_1    ((uint8_t) 2)

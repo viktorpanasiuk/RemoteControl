@@ -3,782 +3,884 @@ RemoteControl.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000448  00000000  00000000  00000074  2**1
+  0 .text         00000408  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  000004bc  2**0
+  1 .data         00000002  00800060  00000408  0000049c  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000022  00800060  00800060  000004bc  2**0
+  2 .bss          00000014  00800062  00800062  0000049e  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  000004bc  2**0
+  3 .comment      00000030  00000000  00000000  0000049e  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000004ec  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000004d0  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 000001c8  00000000  00000000  00000528  2**0
+  5 .debug_aranges 00000128  00000000  00000000  0000050c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00000db9  00000000  00000000  000006f0  2**0
+  6 .debug_info   000014b0  00000000  00000000  00000634  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000007a6  00000000  00000000  000014a9  2**0
+  7 .debug_abbrev 00000ce1  00000000  00000000  00001ae4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000701  00000000  00000000  00001c4f  2**0
+  8 .debug_line   0000094c  00000000  00000000  000027c5  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000394  00000000  00000000  00002350  2**2
+  9 .debug_frame  00000204  00000000  00000000  00003114  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000ae0  00000000  00000000  000026e4  2**0
+ 10 .debug_str    000006ec  00000000  00000000  00003318  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000294  00000000  00000000  000031c4  2**0
+ 11 .debug_loc    00000522  00000000  00000000  00003a04  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 000001a0  00000000  00000000  00003458  2**0
+ 12 .debug_ranges 000000c8  00000000  00000000  00003f26  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
-   0:	12 c1       	rjmp	.+548    	; 0x226 <__ctors_end>
-   2:	21 c1       	rjmp	.+578    	; 0x246 <__bad_interrupt>
-   4:	20 c1       	rjmp	.+576    	; 0x246 <__bad_interrupt>
-   6:	1f c1       	rjmp	.+574    	; 0x246 <__bad_interrupt>
-   8:	1e c1       	rjmp	.+572    	; 0x246 <__bad_interrupt>
-   a:	1d c1       	rjmp	.+570    	; 0x246 <__bad_interrupt>
-   c:	1c c1       	rjmp	.+568    	; 0x246 <__bad_interrupt>
-   e:	1b c1       	rjmp	.+566    	; 0x246 <__bad_interrupt>
-  10:	1a c1       	rjmp	.+564    	; 0x246 <__bad_interrupt>
-  12:	19 c1       	rjmp	.+562    	; 0x246 <__bad_interrupt>
-  14:	18 c1       	rjmp	.+560    	; 0x246 <__bad_interrupt>
-  16:	49 c1       	rjmp	.+658    	; 0x2aa <__vector_11>
-  18:	16 c1       	rjmp	.+556    	; 0x246 <__bad_interrupt>
-  1a:	15 c1       	rjmp	.+554    	; 0x246 <__bad_interrupt>
-  1c:	14 c1       	rjmp	.+552    	; 0x246 <__bad_interrupt>
-  1e:	13 c1       	rjmp	.+550    	; 0x246 <__bad_interrupt>
-  20:	12 c1       	rjmp	.+548    	; 0x246 <__bad_interrupt>
-  22:	11 c1       	rjmp	.+546    	; 0x246 <__bad_interrupt>
-  24:	10 c1       	rjmp	.+544    	; 0x246 <__bad_interrupt>
+   0:	43 c0       	rjmp	.+134    	; 0x88 <__ctors_end>
+   2:	5d c0       	rjmp	.+186    	; 0xbe <__bad_interrupt>
+   4:	5c c0       	rjmp	.+184    	; 0xbe <__bad_interrupt>
+   6:	5b c0       	rjmp	.+182    	; 0xbe <__bad_interrupt>
+   8:	5a c0       	rjmp	.+180    	; 0xbe <__bad_interrupt>
+   a:	59 c0       	rjmp	.+178    	; 0xbe <__bad_interrupt>
+   c:	58 c0       	rjmp	.+176    	; 0xbe <__bad_interrupt>
+   e:	57 c0       	rjmp	.+174    	; 0xbe <__bad_interrupt>
+  10:	2b c1       	rjmp	.+598    	; 0x268 <__vector_8>
+  12:	55 c0       	rjmp	.+170    	; 0xbe <__bad_interrupt>
+  14:	54 c0       	rjmp	.+168    	; 0xbe <__bad_interrupt>
+  16:	40 c1       	rjmp	.+640    	; 0x298 <__vector_11>
+  18:	52 c0       	rjmp	.+164    	; 0xbe <__bad_interrupt>
+  1a:	51 c0       	rjmp	.+162    	; 0xbe <__bad_interrupt>
+  1c:	50 c0       	rjmp	.+160    	; 0xbe <__bad_interrupt>
+  1e:	4f c0       	rjmp	.+158    	; 0xbe <__bad_interrupt>
+  20:	4e c0       	rjmp	.+156    	; 0xbe <__bad_interrupt>
+  22:	4d c0       	rjmp	.+154    	; 0xbe <__bad_interrupt>
+  24:	4c c0       	rjmp	.+152    	; 0xbe <__bad_interrupt>
 
 00000026 <__trampolines_end>:
 	...
- 15a:	24 01       	movw	r4, r8
-	...
- 184:	00 00       	nop
- 186:	25 01       	movw	r4, r10
- 188:	26 01       	movw	r4, r12
- 18a:	27 01       	movw	r4, r14
- 18c:	28 01       	movw	r4, r16
- 18e:	29 01       	movw	r4, r18
- 190:	2a 01       	movw	r4, r20
- 192:	2b 01       	movw	r4, r22
- 194:	2c 01       	movw	r4, r24
- 196:	2d 01       	movw	r4, r26
- 198:	2e 01       	movw	r4, r28
- 19a:	2f 01       	movw	r4, r30
- 19c:	30 01       	movw	r6, r0
- 19e:	31 01       	movw	r6, r2
- 1a0:	32 01       	movw	r6, r4
- 1a2:	33 01       	movw	r6, r6
- 1a4:	34 01       	movw	r6, r8
- 1a6:	35 01       	movw	r6, r10
- 1a8:	36 01       	movw	r6, r12
- 1aa:	37 01       	movw	r6, r14
- 1ac:	38 01       	movw	r6, r16
- 1ae:	39 01       	movw	r6, r18
- 1b0:	3a 01       	movw	r6, r20
- 1b2:	3b 01       	movw	r6, r22
- 1b4:	3c 01       	movw	r6, r24
- 1b6:	3d 01       	movw	r6, r26
- 1b8:	3e 01       	movw	r6, r28
- 1ba:	3f 01       	movw	r6, r30
- 1bc:	40 01       	movw	r8, r0
- 1be:	41 01       	movw	r8, r2
- 1c0:	42 01       	movw	r8, r4
- 1c2:	43 01       	movw	r8, r6
- 1c4:	44 01       	movw	r8, r8
- 1c6:	45 01       	movw	r8, r10
- 1c8:	46 01       	movw	r8, r12
- 1ca:	47 01       	movw	r8, r14
- 1cc:	48 01       	movw	r8, r16
- 1ce:	49 01       	movw	r8, r18
- 1d0:	4a 01       	movw	r8, r20
- 1d2:	4b 01       	movw	r8, r22
+  36:	00 00       	nop
+  38:	61 00       	.word	0x0061	; ????
+  3a:	00 00       	nop
+  3c:	60 00       	.word	0x0060	; ????
+  3e:	65 00       	.word	0x0065	; ????
+  40:	6c 00       	.word	0x006c	; ????
+  42:	00 00       	nop
 	...
 
-00000226 <__ctors_end>:
- 226:	11 24       	eor	r1, r1
- 228:	1f be       	out	0x3f, r1	; 63
- 22a:	cf e5       	ldi	r28, 0x5F	; 95
- 22c:	d4 e0       	ldi	r29, 0x04	; 4
- 22e:	de bf       	out	0x3e, r29	; 62
- 230:	cd bf       	out	0x3d, r28	; 61
+00000046 <ledIlluminationLevelTable>:
+  46:	00 02 04 06 08 0a 0c 0e 10 12 14 16 18 1a 1c 1e     ................
 
-00000232 <__do_clear_bss>:
- 232:	20 e0       	ldi	r18, 0x00	; 0
- 234:	a0 e6       	ldi	r26, 0x60	; 96
- 236:	b0 e0       	ldi	r27, 0x00	; 0
- 238:	01 c0       	rjmp	.+2      	; 0x23c <.do_clear_bss_start>
+00000056 <led>:
+  56:	31 00 32 00 30 00 04 31 00 32 00 30 00 08 31 00     1.2.0..1.2.0..1.
+  66:	32 00 30 00 10 31 00 32 00 30 00 20 31 00 32 00     2.0..1.2.0. 1.2.
+  76:	30 00 40 31 00 32 00 30 00 80 37 00 38 00 36 00     0.@1.2.0..7.8.6.
+  86:	01 00                                               ..
 
-0000023a <.do_clear_bss_loop>:
- 23a:	1d 92       	st	X+, r1
+00000088 <__ctors_end>:
+  88:	11 24       	eor	r1, r1
+  8a:	1f be       	out	0x3f, r1	; 63
+  8c:	cf e5       	ldi	r28, 0x5F	; 95
+  8e:	d4 e0       	ldi	r29, 0x04	; 4
+  90:	de bf       	out	0x3e, r29	; 62
+  92:	cd bf       	out	0x3d, r28	; 61
 
-0000023c <.do_clear_bss_start>:
- 23c:	a2 38       	cpi	r26, 0x82	; 130
- 23e:	b2 07       	cpc	r27, r18
- 240:	e1 f7       	brne	.-8      	; 0x23a <.do_clear_bss_loop>
- 242:	95 d0       	rcall	.+298    	; 0x36e <main>
- 244:	ff c0       	rjmp	.+510    	; 0x444 <_exit>
+00000094 <__do_copy_data>:
+  94:	10 e0       	ldi	r17, 0x00	; 0
+  96:	a0 e6       	ldi	r26, 0x60	; 96
+  98:	b0 e0       	ldi	r27, 0x00	; 0
+  9a:	e8 e0       	ldi	r30, 0x08	; 8
+  9c:	f4 e0       	ldi	r31, 0x04	; 4
+  9e:	02 c0       	rjmp	.+4      	; 0xa4 <__do_copy_data+0x10>
+  a0:	05 90       	lpm	r0, Z+
+  a2:	0d 92       	st	X+, r0
+  a4:	a2 36       	cpi	r26, 0x62	; 98
+  a6:	b1 07       	cpc	r27, r17
+  a8:	d9 f7       	brne	.-10     	; 0xa0 <__do_copy_data+0xc>
 
-00000246 <__bad_interrupt>:
- 246:	dc ce       	rjmp	.-584    	; 0x0 <__vectors>
+000000aa <__do_clear_bss>:
+  aa:	20 e0       	ldi	r18, 0x00	; 0
+  ac:	a2 e6       	ldi	r26, 0x62	; 98
+  ae:	b0 e0       	ldi	r27, 0x00	; 0
+  b0:	01 c0       	rjmp	.+2      	; 0xb4 <.do_clear_bss_start>
 
-00000248 <SourceIndicatorOff>:
-#include "app/cmd.h"
+000000b2 <.do_clear_bss_loop>:
+  b2:	1d 92       	st	X+, r1
 
-void SourceIndicatorOff(void)
+000000b4 <.do_clear_bss_start>:
+  b4:	a6 37       	cpi	r26, 0x76	; 118
+  b6:	b2 07       	cpc	r27, r18
+  b8:	e1 f7       	brne	.-8      	; 0xb2 <.do_clear_bss_loop>
+  ba:	5b d1       	rcall	.+694    	; 0x372 <main>
+  bc:	a3 c1       	rjmp	.+838    	; 0x404 <_exit>
+
+000000be <__bad_interrupt>:
+  be:	a0 cf       	rjmp	.-192    	; 0x0 <__vectors>
+
+000000c0 <ButtonRepeatInterval>:
+        default: break;
+    }
+}
+
+void ButtonRepeatInterval(uint8_t interval)
 {
- 248:	08 95       	ret
+  c0:	08 95       	ret
 
-0000024a <ButtonRepeatInterval_0>:
+000000c2 <SourceIndicator>:
+    [AUDIO_SOURCE]              = AudioSource,
+};
+
+void SourceIndicator(uint8_t param)
+{
+    switch (param)
+  c2:	8a 30       	cpi	r24, 0x0A	; 10
+  c4:	09 f4       	brne	.+2      	; 0xc8 <SourceIndicator+0x6>
+    {
+        case 0x0A: allLedOff(); break;
+  c6:	5b d0       	rcall	.+182    	; 0x17e <allLedOff>
+  c8:	08 95       	ret
+
+000000ca <PanelIlluminationLevel>:
     
 }
 
-void ButtonRepeatInterval_0(void)
+void PanelIlluminationLevel(uint8_t level)
 {
- 24a:	08 95       	ret
+    setPwmLvl(pgm_read_byte(&ledIlluminationLevelTable[level]));
+  ca:	e8 2f       	mov	r30, r24
+  cc:	f0 e0       	ldi	r31, 0x00	; 0
+  ce:	ea 5b       	subi	r30, 0xBA	; 186
+  d0:	ff 4f       	sbci	r31, 0xFF	; 255
+  d2:	84 91       	lpm	r24, Z
+  d4:	b9 d0       	rcall	.+370    	; 0x248 <setPwmLvl>
+  d6:	08 95       	ret
 
-0000024c <ButtonRepeatInterval_1>:
-    
+000000d8 <AudioSource>:
 }
 
-void ButtonRepeatInterval_1(void)
+void AudioSource(uint8_t source)
 {
- 24c:	08 95       	ret
+    switchLedTo((LedSource)source);
+  d8:	31 d0       	rcall	.+98     	; 0x13c <switchLedTo>
+  da:	08 95       	ret
 
-0000024e <ButtonRepeatInterval_2>:
-    
+000000dc <getActionByRxCommand>:
 }
 
-void ButtonRepeatInterval_2(void)
+Func getActionByRxCommand(uint8_t command)
 {
- 24e:	08 95       	ret
+    return (Func)pgm_read_word(&cmd2func[command]);
+  dc:	e8 2f       	mov	r30, r24
+  de:	f0 e0       	ldi	r31, 0x00	; 0
+  e0:	ee 0f       	add	r30, r30
+  e2:	ff 1f       	adc	r31, r31
+  e4:	ea 5d       	subi	r30, 0xDA	; 218
+  e6:	ff 4f       	sbci	r31, 0xFF	; 255
+  e8:	85 91       	lpm	r24, Z+
+  ea:	94 91       	lpm	r25, Z
+  ec:	08 95       	ret
 
-00000250 <ButtonRepeatInterval_3>:
-    
+000000ee <ledInit>:
+};
+
+static void setLed(LedSource source, LedState state);
+
+void ledInit(void)
+{
+  ee:	ef 92       	push	r14
+  f0:	ff 92       	push	r15
+  f2:	0f 93       	push	r16
+  f4:	1f 93       	push	r17
+  f6:	cf 93       	push	r28
+  f8:	df 93       	push	r29
+  fa:	c6 e5       	ldi	r28, 0x56	; 86
+  fc:	d0 e0       	ldi	r29, 0x00	; 0
+  fe:	0f 2e       	mov	r0, r31
+ 100:	f7 e8       	ldi	r31, 0x87	; 135
+ 102:	ef 2e       	mov	r14, r31
+ 104:	f0 e0       	ldi	r31, 0x00	; 0
+ 106:	ff 2e       	mov	r15, r31
+ 108:	f0 2d       	mov	r31, r0
+ 10a:	8e 01       	movw	r16, r28
+    for(LedSource source = AM; source < NUM_OF_SOURCE; ++source) {
+        GpioStruct * gpio = getGpioStructFromFlash(&led[source]);
+ 10c:	c8 01       	movw	r24, r16
+ 10e:	68 d0       	rcall	.+208    	; 0x1e0 <getGpioStructFromFlash>
+
+        setGpioDirection(gpio, OUTPUT);
+ 110:	61 e0       	ldi	r22, 0x01	; 1
+ 112:	43 d0       	rcall	.+134    	; 0x19a <setGpioDirection>
+ 114:	09 5f       	subi	r16, 0xF9	; 249
+ 116:	1f 4f       	sbci	r17, 0xFF	; 255
+
+static void setLed(LedSource source, LedState state);
+
+void ledInit(void)
+{
+    for(LedSource source = AM; source < NUM_OF_SOURCE; ++source) {
+ 118:	0e 15       	cp	r16, r14
+ 11a:	1f 05       	cpc	r17, r15
+ 11c:	b9 f7       	brne	.-18     	; 0x10c <ledInit+0x1e>
+
+        setGpioDirection(gpio, OUTPUT);
+    }
+
+    for(LedSource source = AM; source < NUM_OF_SOURCE; ++source) {
+        GpioStruct * gpio = getGpioStructFromFlash(&led[source]);
+ 11e:	ce 01       	movw	r24, r28
+ 120:	5f d0       	rcall	.+190    	; 0x1e0 <getGpioStructFromFlash>
+
+        setGpioState(gpio, LOW);
+ 122:	60 e0       	ldi	r22, 0x00	; 0
+ 124:	4b d0       	rcall	.+150    	; 0x1bc <setGpioState>
+ 126:	27 96       	adiw	r28, 0x07	; 7
+        GpioStruct * gpio = getGpioStructFromFlash(&led[source]);
+
+        setGpioDirection(gpio, OUTPUT);
+    }
+
+    for(LedSource source = AM; source < NUM_OF_SOURCE; ++source) {
+ 128:	ce 15       	cp	r28, r14
+ 12a:	df 05       	cpc	r29, r15
+ 12c:	c1 f7       	brne	.-16     	; 0x11e <ledInit+0x30>
+        GpioStruct * gpio = getGpioStructFromFlash(&led[source]);
+
+        setGpioState(gpio, LOW);
+    }
+}
+ 12e:	df 91       	pop	r29
+ 130:	cf 91       	pop	r28
+ 132:	1f 91       	pop	r17
+ 134:	0f 91       	pop	r16
+ 136:	ff 90       	pop	r15
+ 138:	ef 90       	pop	r14
+ 13a:	08 95       	ret
+
+0000013c <switchLedTo>:
+
+    setGpioState(gpio, state);
 }
 
-void ButtonRepeatInterval_3(void)
+void switchLedTo(LedSource nextSource)
 {
- 250:	08 95       	ret
-
-00000252 <ButtonRepeatInterval_4>:
-    
+ 13c:	cf 93       	push	r28
+ 13e:	c8 2f       	mov	r28, r24
+    if (prevState == ON) {
+ 140:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <__data_end>
+ 144:	81 30       	cpi	r24, 0x01	; 1
+ 146:	59 f4       	brne	.+22     	; 0x15e <switchLedTo+0x22>
+    }
 }
 
-void ButtonRepeatInterval_4(void)
+static void setLed(LedSource source, LedState state)
 {
- 252:	08 95       	ret
+    GpioStruct * gpio = getGpioStructFromFlash(&led[source]);
+ 148:	80 91 63 00 	lds	r24, 0x0063	; 0x800063 <prevSource>
+ 14c:	27 e0       	ldi	r18, 0x07	; 7
+ 14e:	82 9f       	mul	r24, r18
+ 150:	c0 01       	movw	r24, r0
+ 152:	11 24       	eor	r1, r1
+ 154:	8a 5a       	subi	r24, 0xAA	; 170
+ 156:	9f 4f       	sbci	r25, 0xFF	; 255
+ 158:	43 d0       	rcall	.+134    	; 0x1e0 <getGpioStructFromFlash>
 
-00000254 <ButtonRepeatInterval_5>:
-    
+    setGpioState(gpio, state);
+ 15a:	60 e0       	ldi	r22, 0x00	; 0
+ 15c:	2f d0       	rcall	.+94     	; 0x1bc <setGpioState>
+    }
 }
 
-void ButtonRepeatInterval_5(void)
+static void setLed(LedSource source, LedState state)
 {
- 254:	08 95       	ret
+    GpioStruct * gpio = getGpioStructFromFlash(&led[source]);
+ 15e:	27 e0       	ldi	r18, 0x07	; 7
+ 160:	c2 9f       	mul	r28, r18
+ 162:	c0 01       	movw	r24, r0
+ 164:	11 24       	eor	r1, r1
+ 166:	8a 5a       	subi	r24, 0xAA	; 170
+ 168:	9f 4f       	sbci	r25, 0xFF	; 255
+ 16a:	3a d0       	rcall	.+116    	; 0x1e0 <getGpioStructFromFlash>
 
-00000256 <ButtonRepeatInterval_6>:
-    
+    setGpioState(gpio, state);
+ 16c:	61 e0       	ldi	r22, 0x01	; 1
+ 16e:	26 d0       	rcall	.+76     	; 0x1bc <setGpioState>
+    if (prevState == ON) {
+        setLed(prevSource, OFF);
+    }
+    setLed(nextSource, ON);
+
+    prevSource = nextSource;
+ 170:	c0 93 63 00 	sts	0x0063, r28	; 0x800063 <prevSource>
+    prevState = ON;
+ 174:	81 e0       	ldi	r24, 0x01	; 1
+ 176:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <__data_end>
+}
+ 17a:	cf 91       	pop	r28
+ 17c:	08 95       	ret
+
+0000017e <allLedOff>:
+    }
 }
 
-void ButtonRepeatInterval_6(void)
+static void setLed(LedSource source, LedState state)
 {
- 256:	08 95       	ret
+    GpioStruct * gpio = getGpioStructFromFlash(&led[source]);
+ 17e:	80 91 63 00 	lds	r24, 0x0063	; 0x800063 <prevSource>
+ 182:	27 e0       	ldi	r18, 0x07	; 7
+ 184:	82 9f       	mul	r24, r18
+ 186:	c0 01       	movw	r24, r0
+ 188:	11 24       	eor	r1, r1
+ 18a:	8a 5a       	subi	r24, 0xAA	; 170
+ 18c:	9f 4f       	sbci	r25, 0xFF	; 255
+ 18e:	28 d0       	rcall	.+80     	; 0x1e0 <getGpioStructFromFlash>
 
-00000258 <ButtonRepeatInterval_7>:
-    
+    setGpioState(gpio, state);
+ 190:	60 e0       	ldi	r22, 0x00	; 0
+ 192:	14 d0       	rcall	.+40     	; 0x1bc <setGpioState>
 }
 
-void ButtonRepeatInterval_7(void)
+void allLedOff(void)
 {
- 258:	08 95       	ret
+    setLed(prevSource, OFF);
+    prevState = OFF;
+ 194:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <__data_end>
+ 198:	08 95       	ret
 
-0000025a <ButtonRepeatInterval_8>:
-    
+0000019a <setGpioDirection>:
+#include "hal/gpio.h"
+
+void setGpioDirection(GpioStruct * gpio, GpioDirection direction)
+{
+    volatile uint8_t * ddr = gpio->ddr;
+ 19a:	dc 01       	movw	r26, r24
+ 19c:	ed 91       	ld	r30, X+
+ 19e:	fc 91       	ld	r31, X
+ 1a0:	11 97       	sbiw	r26, 0x01	; 1
+    uint8_t mask = gpio->mask;
+ 1a2:	16 96       	adiw	r26, 0x06	; 6
+ 1a4:	8c 91       	ld	r24, X
+
+    goto * (direction == INPUT) ? &&INPUT : &&OUTPUT;
+ 1a6:	61 11       	cpse	r22, r1
+ 1a8:	05 c0       	rjmp	.+10     	; 0x1b4 <setGpioDirection+0x1a>
+
+    INPUT: *ddr &= ~mask; return;
+ 1aa:	90 81       	ld	r25, Z
+ 1ac:	80 95       	com	r24
+ 1ae:	89 23       	and	r24, r25
+ 1b0:	80 83       	st	Z, r24
+ 1b2:	08 95       	ret
+    OUTPUT: *ddr |= mask; return;
+ 1b4:	90 81       	ld	r25, Z
+ 1b6:	89 2b       	or	r24, r25
+ 1b8:	80 83       	st	Z, r24
+ 1ba:	08 95       	ret
+
+000001bc <setGpioState>:
 }
 
-void ButtonRepeatInterval_8(void)
+void setGpioState(GpioStruct * gpio, GpioState state)
 {
- 25a:	08 95       	ret
+    volatile uint8_t * port = gpio->port;
+ 1bc:	dc 01       	movw	r26, r24
+ 1be:	12 96       	adiw	r26, 0x02	; 2
+ 1c0:	ed 91       	ld	r30, X+
+ 1c2:	fc 91       	ld	r31, X
+ 1c4:	13 97       	sbiw	r26, 0x03	; 3
+    uint8_t mask = gpio->mask;
+ 1c6:	16 96       	adiw	r26, 0x06	; 6
+ 1c8:	8c 91       	ld	r24, X
 
-0000025c <ButtonRepeatInterval_9>:
-    
+    goto * (state == LOW) ? &&LOW : &&HIGH;
+ 1ca:	61 11       	cpse	r22, r1
+ 1cc:	05 c0       	rjmp	.+10     	; 0x1d8 <setGpioState+0x1c>
+
+    LOW: *port &= ~mask; return;
+ 1ce:	90 81       	ld	r25, Z
+ 1d0:	80 95       	com	r24
+ 1d2:	89 23       	and	r24, r25
+ 1d4:	80 83       	st	Z, r24
+ 1d6:	08 95       	ret
+    HIGH: *port |= mask; return;
+ 1d8:	90 81       	ld	r25, Z
+ 1da:	89 2b       	or	r24, r25
+ 1dc:	80 83       	st	Z, r24
+ 1de:	08 95       	ret
+
+000001e0 <getGpioStructFromFlash>:
+
+GpioStruct * getGpioStructFromFlash(PGM_VOID_P pgmGpio)
+{
+    static GpioStruct gpio;
+
+    memcpy_P(&gpio, pgmGpio, sizeof(GpioStruct));
+ 1e0:	47 e0       	ldi	r20, 0x07	; 7
+ 1e2:	50 e0       	ldi	r21, 0x00	; 0
+ 1e4:	bc 01       	movw	r22, r24
+ 1e6:	84 e6       	ldi	r24, 0x64	; 100
+ 1e8:	90 e0       	ldi	r25, 0x00	; 0
+ 1ea:	03 d1       	rcall	.+518    	; 0x3f2 <memcpy_P>
+
+    return &gpio;
+ 1ec:	84 e6       	ldi	r24, 0x64	; 100
+ 1ee:	90 e0       	ldi	r25, 0x00	; 0
+ 1f0:	08 95       	ret
+
+000001f2 <pwmInit>:
+static void setOutputCompareRegisterB(uint16_t ocrb);
+static void setClockSelectMode(ClockSelectMode mode);
+
+void pwmInit(void)
+{
+    PWM_DDRx |= _BV(PWM_DDxn);
+ 1f2:	ba 9a       	sbi	0x17, 2	; 23
+    setOutputCompareRegisterB(ocrb);
 }
 
-void ButtonRepeatInterval_9(void)
+static void setWaveformGenerationMode(WaveformGenerationMode mode)
 {
- 25c:	08 95       	ret
+    TCCR1A = (mode & _BV(0)) ? TCCR1A | _BV(WGM10) : TCCR1A & ~_BV(WGM10);
+ 1f4:	8f b5       	in	r24, 0x2f	; 47
+ 1f6:	81 60       	ori	r24, 0x01	; 1
+ 1f8:	8f bd       	out	0x2f, r24	; 47
+    TCCR1A = (mode & _BV(1)) ? TCCR1A | _BV(WGM11) : TCCR1A & ~_BV(WGM11);
+ 1fa:	8f b5       	in	r24, 0x2f	; 47
+ 1fc:	82 60       	ori	r24, 0x02	; 2
+ 1fe:	8f bd       	out	0x2f, r24	; 47
+    TCCR1B = (mode & _BV(2)) ? TCCR1B | _BV(WGM12) : TCCR1B & ~_BV(WGM12);
+ 200:	8e b5       	in	r24, 0x2e	; 46
+ 202:	88 60       	ori	r24, 0x08	; 8
+ 204:	8e bd       	out	0x2e, r24	; 46
+    TCCR1B = (mode & _BV(3)) ? TCCR1B | _BV(WGM13) : TCCR1B & ~_BV(WGM13);
+ 206:	8e b5       	in	r24, 0x2e	; 46
+ 208:	80 61       	ori	r24, 0x10	; 16
+ 20a:	8e bd       	out	0x2e, r24	; 46
+static void setCompareOutputMode(Channel channel, CompareOutputMode mode)
+{
+    switch (channel) {
 
-0000025e <ButtonRepeatInterval_10>:
-    
+    case A:
+        TCCR1A = (mode & _BV(0)) ? TCCR1A | _BV(COM1A0) : TCCR1A & ~_BV(COM1A0);
+ 20c:	8f b5       	in	r24, 0x2f	; 47
+ 20e:	8f 7b       	andi	r24, 0xBF	; 191
+ 210:	8f bd       	out	0x2f, r24	; 47
+        TCCR1A = (mode & _BV(1)) ? TCCR1A | _BV(COM1A1) : TCCR1A & ~_BV(COM1A1);
+ 212:	8f b5       	in	r24, 0x2f	; 47
+ 214:	8f 77       	andi	r24, 0x7F	; 127
+ 216:	8f bd       	out	0x2f, r24	; 47
+        break;
+
+    case B:
+        TCCR1A = (mode & _BV(0)) ? TCCR1A | _BV(COM1B0) : TCCR1A & ~_BV(COM1B0);
+ 218:	8f b5       	in	r24, 0x2f	; 47
+ 21a:	8f 7e       	andi	r24, 0xEF	; 239
+ 21c:	8f bd       	out	0x2f, r24	; 47
+        TCCR1A = (mode & _BV(1)) ? TCCR1A | _BV(COM1B1) : TCCR1A & ~_BV(COM1B1);
+ 21e:	8f b5       	in	r24, 0x2f	; 47
+ 220:	80 62       	ori	r24, 0x20	; 32
+ 222:	8f bd       	out	0x2f, r24	; 47
+    }
 }
 
-void ButtonRepeatInterval_10(void)
+static void setOutputCompareRegisterA(uint16_t ocra)
 {
- 25e:	08 95       	ret
-
-00000260 <ButtonRepeatInterval_11>:
-    
+    OCR1A = ocra;
+ 224:	80 e4       	ldi	r24, 0x40	; 64
+ 226:	9f e1       	ldi	r25, 0x1F	; 31
+ 228:	9b bd       	out	0x2b, r25	; 43
+ 22a:	8a bd       	out	0x2a, r24	; 42
 }
 
-void ButtonRepeatInterval_11(void)
+static void setOutputCompareRegisterB(uint16_t ocrb)
 {
- 260:	08 95       	ret
-
-00000262 <ButtonRepeatInterval_12>:
-    
+    OCR1B = ocrb;
+ 22c:	99 bd       	out	0x29, r25	; 41
+ 22e:	88 bd       	out	0x28, r24	; 40
 }
 
-void ButtonRepeatInterval_12(void)
+static void setClockSelectMode(ClockSelectMode mode)
 {
- 262:	08 95       	ret
+    TCCR1B &= ~(_BV(CS12) | _BV(CS11) | _BV(CS10));
+ 230:	8e b5       	in	r24, 0x2e	; 46
+ 232:	88 7f       	andi	r24, 0xF8	; 248
+ 234:	8e bd       	out	0x2e, r24	; 46
+    TCNT1 = 0x0000;
+ 236:	1d bc       	out	0x2d, r1	; 45
+ 238:	1c bc       	out	0x2c, r1	; 44
+    TCCR1B |= mode;
+ 23a:	8e b5       	in	r24, 0x2e	; 46
+ 23c:	81 60       	ori	r24, 0x01	; 1
+ 23e:	8e bd       	out	0x2e, r24	; 46
+    setCompareOutputMode(A, NORMAL);
+    setCompareOutputMode(B, NONINVERTING);
+    setOutputCompareRegisterA(PWM_MAX_LVL);
+    setOutputCompareRegisterB(PWM_MAX_LVL);
+    setClockSelectMode(PRESCALER_1);
+    TIMSK |= _BV(TOIE1);
+ 240:	89 b7       	in	r24, 0x39	; 57
+ 242:	84 60       	ori	r24, 0x04	; 4
+ 244:	89 bf       	out	0x39, r24	; 57
+ 246:	08 95       	ret
 
-00000264 <ButtonRepeatInterval_13>:
-    
+00000248 <setPwmLvl>:
 }
 
-void ButtonRepeatInterval_13(void)
+void setPwmLvl(uint8_t percent)
 {
- 264:	08 95       	ret
-
-00000266 <ButtonRepeatInterval_14>:
-    
+    uint16_t ocrb = PWM_MAX_LVL - percent * PWM_MAX_LVL / 100;
+ 248:	20 e4       	ldi	r18, 0x40	; 64
+ 24a:	3f e1       	ldi	r19, 0x1F	; 31
+ 24c:	48 2f       	mov	r20, r24
+ 24e:	42 9f       	mul	r20, r18
+ 250:	c0 01       	movw	r24, r0
+ 252:	43 9f       	mul	r20, r19
+ 254:	90 0d       	add	r25, r0
+ 256:	11 24       	eor	r1, r1
+ 258:	64 e6       	ldi	r22, 0x64	; 100
+ 25a:	70 e0       	ldi	r23, 0x00	; 0
+ 25c:	a3 d0       	rcall	.+326    	; 0x3a4 <__divmodhi4>
+ 25e:	26 1b       	sub	r18, r22
+ 260:	37 0b       	sbc	r19, r23
+    OCR1A = ocra;
 }
 
-void ButtonRepeatInterval_14(void)
+static void setOutputCompareRegisterB(uint16_t ocrb)
 {
+    OCR1B = ocrb;
+ 262:	39 bd       	out	0x29, r19	; 41
+ 264:	28 bd       	out	0x28, r18	; 40
  266:	08 95       	ret
 
-00000268 <ButtonRepeatInterval_15>:
-    
+00000268 <__vector_8>:
+    TCNT1 = 0x0000;
+    TCCR1B |= mode;
 }
 
-void ButtonRepeatInterval_15(void)
+ISR(TIMER1_OVF_vect)
 {
- 268:	08 95       	ret
+ 268:	1f 92       	push	r1
+ 26a:	0f 92       	push	r0
+ 26c:	0f b6       	in	r0, 0x3f	; 63
+ 26e:	0f 92       	push	r0
+ 270:	11 24       	eor	r1, r1
+ 272:	8f 93       	push	r24
+    isTick = true;
+ 274:	81 e0       	ldi	r24, 0x01	; 1
+ 276:	80 93 75 00 	sts	0x0075, r24	; 0x800075 <isTick>
+ 27a:	8f 91       	pop	r24
+ 27c:	0f 90       	pop	r0
+ 27e:	0f be       	out	0x3f, r0	; 63
+ 280:	0f 90       	pop	r0
+ 282:	1f 90       	pop	r1
+ 284:	18 95       	reti
 
-0000026a <PanelIlluminationLevel_0>:
-    
-}
-
-void PanelIlluminationLevel_0(void)
-{
- 26a:	08 95       	ret
-
-0000026c <PanelIlluminationLevel_1>:
-    
-}
-
-void PanelIlluminationLevel_1(void)
-{
- 26c:	08 95       	ret
-
-0000026e <PanelIlluminationLevel_2>:
-    
-}
-
-void PanelIlluminationLevel_2(void)
-{
- 26e:	08 95       	ret
-
-00000270 <PanelIlluminationLevel_3>:
-    
-}
-
-void PanelIlluminationLevel_3(void)
-{
- 270:	08 95       	ret
-
-00000272 <PanelIlluminationLevel_4>:
-    
-}
-
-void PanelIlluminationLevel_4(void)
-{
- 272:	08 95       	ret
-
-00000274 <PanelIlluminationLevel_5>:
-    
-}
-
-void PanelIlluminationLevel_5(void)
-{
- 274:	08 95       	ret
-
-00000276 <PanelIlluminationLevel_6>:
-    
-}
-
-void PanelIlluminationLevel_6(void)
-{
- 276:	08 95       	ret
-
-00000278 <PanelIlluminationLevel_7>:
-    
-}
-
-void PanelIlluminationLevel_7(void)
-{
- 278:	08 95       	ret
-
-0000027a <PanelIlluminationLevel_8>:
-    
-}
-
-void PanelIlluminationLevel_8(void)
-{
- 27a:	08 95       	ret
-
-0000027c <PanelIlluminationLevel_9>:
-    
-}
-
-void PanelIlluminationLevel_9(void)
-{
- 27c:	08 95       	ret
-
-0000027e <PanelIlluminationLevel_10>:
-    
-}
-
-void PanelIlluminationLevel_10(void)
-{
- 27e:	08 95       	ret
-
-00000280 <PanelIlluminationLevel_11>:
-    
-}
-
-void PanelIlluminationLevel_11(void)
-{
- 280:	08 95       	ret
-
-00000282 <PanelIlluminationLevel_12>:
-    
-}
-
-void PanelIlluminationLevel_12(void)
-{
- 282:	08 95       	ret
-
-00000284 <PanelIlluminationLevel_13>:
-    
-}
-
-void PanelIlluminationLevel_13(void)
-{
- 284:	08 95       	ret
-
-00000286 <PanelIlluminationLevel_14>:
-    
-}
-
-void PanelIlluminationLevel_14(void)
-{
- 286:	08 95       	ret
-
-00000288 <PanelIlluminationLevel_15>:
-    
-}
-
-void PanelIlluminationLevel_15(void)
-{
- 288:	08 95       	ret
-
-0000028a <AudioSource_AM>:
-    
-}
-
-void AudioSource_AM(void)
-{
- 28a:	08 95       	ret
-
-0000028c <AudioSource_FM>:
-    
-}
-
-void AudioSource_FM(void)
-{
- 28c:	08 95       	ret
-
-0000028e <AudioSource_WB>:
-    
-}
-
-void AudioSource_WB(void)
-{
- 28e:	08 95       	ret
-
-00000290 <AudioSource_SXM>:
-    
-}
-
-void AudioSource_SXM(void)
-{
- 290:	08 95       	ret
-
-00000292 <AudioSource_BT>:
-    
-}
-
-void AudioSource_BT(void)
-{
- 292:	08 95       	ret
-
-00000294 <AudioSource_AUX>:
-    
-}
-
-void AudioSource_AUX(void)
-{
- 294:	08 95       	ret
-
-00000296 <AudioSource_USB>:
-    
-}
-
-void AudioSource_USB(void)
-{
- 296:	08 95       	ret
-
-00000298 <uartInit>:
-extern volatile UartRx uartRx;
+00000286 <uartInit>:
+static volatile uint8_t queueCnt;
 
 void uartInit(void)
 {
     /*Set baud rate */
     UBRRH = (uint8_t)(UBRR >> 8);
- 298:	10 bc       	out	0x20, r1	; 32
+ 286:	10 bc       	out	0x20, r1	; 32
     UBRRL = (uint8_t)(UBRR >> 0);
- 29a:	80 e1       	ldi	r24, 0x10	; 16
- 29c:	89 b9       	out	0x09, r24	; 9
+ 288:	80 e1       	ldi	r24, 0x10	; 16
+ 28a:	89 b9       	out	0x09, r24	; 9
     /* Set double speed */
     UCSRA |= (1 << U2X);
- 29e:	59 9a       	sbi	0x0b, 1	; 11
+ 28c:	59 9a       	sbi	0x0b, 1	; 11
     /* Enable receiver and transmitter */
     UCSRB = (1 << RXCIE) | (1 << RXEN) | (1 << TXEN);
- 2a0:	88 e9       	ldi	r24, 0x98	; 152
- 2a2:	8a b9       	out	0x0a, r24	; 10
+ 28e:	88 e9       	ldi	r24, 0x98	; 152
+ 290:	8a b9       	out	0x0a, r24	; 10
     /* Set frame format: 8 data, 1 stop bit */
     UCSRC = (1 << URSEL) | (3 << UCSZ0);
- 2a4:	86 e8       	ldi	r24, 0x86	; 134
- 2a6:	80 bd       	out	0x20, r24	; 32
- 2a8:	08 95       	ret
+ 292:	86 e8       	ldi	r24, 0x86	; 134
+ 294:	80 bd       	out	0x20, r24	; 32
+ 296:	08 95       	ret
 
-000002aa <__vector_11>:
+00000298 <__vector_11>:
 }
 
 ISR(USART_RXC_vect)
 {
- 2aa:	1f 92       	push	r1
- 2ac:	0f 92       	push	r0
- 2ae:	0f b6       	in	r0, 0x3f	; 63
- 2b0:	0f 92       	push	r0
- 2b2:	11 24       	eor	r1, r1
- 2b4:	2f 93       	push	r18
- 2b6:	3f 93       	push	r19
- 2b8:	4f 93       	push	r20
- 2ba:	5f 93       	push	r21
- 2bc:	6f 93       	push	r22
- 2be:	7f 93       	push	r23
- 2c0:	8f 93       	push	r24
- 2c2:	9f 93       	push	r25
- 2c4:	af 93       	push	r26
- 2c6:	bf 93       	push	r27
- 2c8:	ef 93       	push	r30
- 2ca:	ff 93       	push	r31
- 2cc:	cf 93       	push	r28
- 2ce:	df 93       	push	r29
- 2d0:	00 d0       	rcall	.+0      	; 0x2d2 <__vector_11+0x28>
- 2d2:	00 d0       	rcall	.+0      	; 0x2d4 <__vector_11+0x2a>
- 2d4:	cd b7       	in	r28, 0x3d	; 61
- 2d6:	de b7       	in	r29, 0x3e	; 62
-    static UartRxState state = START;
+ 298:	1f 92       	push	r1
+ 29a:	0f 92       	push	r0
+ 29c:	0f b6       	in	r0, 0x3f	; 63
+ 29e:	0f 92       	push	r0
+ 2a0:	11 24       	eor	r1, r1
+ 2a2:	2f 93       	push	r18
+ 2a4:	8f 93       	push	r24
+ 2a6:	9f 93       	push	r25
+ 2a8:	ef 93       	push	r30
+ 2aa:	ff 93       	push	r31
+    static void * state = &&START;
     static uint8_t command;
+    uint8_t data = UDR;
+ 2ac:	8c b1       	in	r24, 0x0c	; 12
+ 2ae:	e0 91 60 00 	lds	r30, 0x0060	; 0x800060 <__data_start>
+ 2b2:	f0 91 61 00 	lds	r31, 0x0061	; 0x800061 <__data_start+0x1>
+ 2b6:	09 94       	ijmp
 
-    switch (state) {
- 2d8:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <state.1915>
- 2dc:	81 30       	cpi	r24, 0x01	; 1
- 2de:	61 f0       	breq	.+24     	; 0x2f8 <__vector_11+0x4e>
- 2e0:	18 f0       	brcs	.+6      	; 0x2e8 <__vector_11+0x3e>
- 2e2:	82 30       	cpi	r24, 0x02	; 2
- 2e4:	81 f0       	breq	.+32     	; 0x306 <__vector_11+0x5c>
- 2e6:	2a c0       	rjmp	.+84     	; 0x33c <__vector_11+0x92>
+    goto * state;
 
-        /* Start message */
-        case START:
-            state = (UDR == MESSAGE_START) ? COMMAND : START;
- 2e8:	9c b1       	in	r25, 0x0c	; 12
- 2ea:	81 e0       	ldi	r24, 0x01	; 1
- 2ec:	99 38       	cpi	r25, 0x89	; 137
- 2ee:	09 f0       	breq	.+2      	; 0x2f2 <__vector_11+0x48>
- 2f0:	80 e0       	ldi	r24, 0x00	; 0
- 2f2:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <state.1915>
-            break;
- 2f6:	24 c0       	rjmp	.+72     	; 0x340 <__vector_11+0x96>
+    /* Start message */
+    START:
+        if (data == MESSAGE_START) {
+ 2b8:	89 38       	cpi	r24, 0x89	; 137
+ 2ba:	51 f5       	brne	.+84     	; 0x310 <__vector_11+0x78>
+            state = &&COMMAND;
+ 2bc:	85 e6       	ldi	r24, 0x65	; 101
+ 2be:	91 e0       	ldi	r25, 0x01	; 1
+ 2c0:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__data_start+0x1>
+ 2c4:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__data_start>
+ 2c8:	23 c0       	rjmp	.+70     	; 0x310 <__vector_11+0x78>
+        }
+        return;
 
-        /* Command receiving */
-        case COMMAND:
-            command = UDR;
- 2f8:	8c b1       	in	r24, 0x0c	; 12
- 2fa:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <_edata>
-            state = CHECKSUM;
- 2fe:	82 e0       	ldi	r24, 0x02	; 2
- 300:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <state.1915>
-            break;
- 304:	1d c0       	rjmp	.+58     	; 0x340 <__vector_11+0x96>
+    /* Command receiving */
+    COMMAND:
+        command = data;
+ 2ca:	80 93 6b 00 	sts	0x006B, r24	; 0x80006b <command.1692>
+        state = &&CHECKSUM;
+ 2ce:	8e e6       	ldi	r24, 0x6E	; 110
+ 2d0:	91 e0       	ldi	r25, 0x01	; 1
+ 2d2:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__data_start+0x1>
+ 2d6:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__data_start>
+        return;
+ 2da:	1a c0       	rjmp	.+52     	; 0x310 <__vector_11+0x78>
 
-        /* Checksum checking */
-        case CHECKSUM:
-            if (command + MESSAGE_START == UDR) {
- 306:	e0 91 60 00 	lds	r30, 0x0060	; 0x800060 <_edata>
- 30a:	f0 e0       	ldi	r31, 0x00	; 0
- 30c:	8c b1       	in	r24, 0x0c	; 12
- 30e:	9f 01       	movw	r18, r30
- 310:	27 57       	subi	r18, 0x77	; 119
- 312:	3f 4f       	sbci	r19, 0xFF	; 255
- 314:	90 e0       	ldi	r25, 0x00	; 0
- 316:	28 17       	cp	r18, r24
- 318:	39 07       	cpc	r19, r25
- 31a:	69 f4       	brne	.+26     	; 0x336 <__vector_11+0x8c>
-                QueueElement element = {
- 31c:	1a 82       	std	Y+2, r1	; 0x02
- 31e:	19 82       	std	Y+1, r1	; 0x01
-                    .cnt = 0,
-                    .func = (Func)pgm_read_word(&cmd2func[command]),
- 320:	ee 0f       	add	r30, r30
- 322:	ff 1f       	adc	r31, r31
- 324:	ea 5d       	subi	r30, 0xDA	; 218
- 326:	ff 4f       	sbci	r31, 0xFF	; 255
- 328:	85 91       	lpm	r24, Z+
- 32a:	94 91       	lpm	r25, Z
-            break;
-
-        /* Checksum checking */
-        case CHECKSUM:
-            if (command + MESSAGE_START == UDR) {
-                QueueElement element = {
- 32c:	9c 83       	std	Y+4, r25	; 0x04
- 32e:	8b 83       	std	Y+3, r24	; 0x03
-                    .cnt = 0,
-                    .func = (Func)pgm_read_word(&cmd2func[command]),
-                };
-                setQueueElement(&element);
- 330:	ce 01       	movw	r24, r28
- 332:	01 96       	adiw	r24, 0x01	; 1
- 334:	31 d0       	rcall	.+98     	; 0x398 <setQueueElement>
-            }
-            state = START;
- 336:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <state.1915>
-            break;
- 33a:	02 c0       	rjmp	.+4      	; 0x340 <__vector_11+0x96>
-
-        /* Default state */
-        default:
-            state = START;
- 33c:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <state.1915>
-            break;
-    }
+    /* Checksum checking */
+    CHECKSUM:
+        if ((uint8_t)(command + MESSAGE_START) == data) {
+ 2dc:	90 91 6b 00 	lds	r25, 0x006B	; 0x80006b <command.1692>
+ 2e0:	29 e8       	ldi	r18, 0x89	; 137
+ 2e2:	29 0f       	add	r18, r25
+ 2e4:	28 13       	cpse	r18, r24
+ 2e6:	0e c0       	rjmp	.+28     	; 0x304 <__vector_11+0x6c>
+    return cmd;
 }
- 340:	0f 90       	pop	r0
- 342:	0f 90       	pop	r0
- 344:	0f 90       	pop	r0
- 346:	0f 90       	pop	r0
- 348:	df 91       	pop	r29
- 34a:	cf 91       	pop	r28
- 34c:	ff 91       	pop	r31
- 34e:	ef 91       	pop	r30
- 350:	bf 91       	pop	r27
- 352:	af 91       	pop	r26
- 354:	9f 91       	pop	r25
- 356:	8f 91       	pop	r24
- 358:	7f 91       	pop	r23
- 35a:	6f 91       	pop	r22
- 35c:	5f 91       	pop	r21
- 35e:	4f 91       	pop	r20
- 360:	3f 91       	pop	r19
- 362:	2f 91       	pop	r18
- 364:	0f 90       	pop	r0
- 366:	0f be       	out	0x3f, r0	; 63
- 368:	0f 90       	pop	r0
- 36a:	1f 90       	pop	r1
- 36c:	18 95       	reti
 
-0000036e <main>:
-#include "hal/uart.h"
-/* OS */
-#include "os/queue.h"
+static bool isCmdQueueFull(void)
+{
+    return (queueCnt == SIZE_OF_CMD_QUEUE - 1) ? true : false;
+ 2e8:	80 91 6c 00 	lds	r24, 0x006C	; 0x80006c <queueCnt>
+        return;
+
+    /* Checksum checking */
+    CHECKSUM:
+        if ((uint8_t)(command + MESSAGE_START) == data) {
+            if (!isCmdQueueFull()) {
+ 2ec:	87 30       	cpi	r24, 0x07	; 7
+ 2ee:	51 f0       	breq	.+20     	; 0x304 <__vector_11+0x6c>
+        return;
+}
+
+static void setUartCmdToQueue(uint8_t cmd)
+{
+    cmdQueue[queueCnt++] = cmd;
+ 2f0:	e0 91 6c 00 	lds	r30, 0x006C	; 0x80006c <queueCnt>
+ 2f4:	81 e0       	ldi	r24, 0x01	; 1
+ 2f6:	8e 0f       	add	r24, r30
+ 2f8:	80 93 6c 00 	sts	0x006C, r24	; 0x80006c <queueCnt>
+ 2fc:	f0 e0       	ldi	r31, 0x00	; 0
+ 2fe:	e3 59       	subi	r30, 0x93	; 147
+ 300:	ff 4f       	sbci	r31, 0xFF	; 255
+ 302:	90 83       	st	Z, r25
+        if ((uint8_t)(command + MESSAGE_START) == data) {
+            if (!isCmdQueueFull()) {
+                setUartCmdToQueue(command);
+            }
+        }
+        state = &&START;
+ 304:	8c e5       	ldi	r24, 0x5C	; 92
+ 306:	91 e0       	ldi	r25, 0x01	; 1
+ 308:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__data_start+0x1>
+ 30c:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__data_start>
+        return;
+}
+ 310:	ff 91       	pop	r31
+ 312:	ef 91       	pop	r30
+ 314:	9f 91       	pop	r25
+ 316:	8f 91       	pop	r24
+ 318:	2f 91       	pop	r18
+ 31a:	0f 90       	pop	r0
+ 31c:	0f be       	out	0x3f, r0	; 63
+ 31e:	0f 90       	pop	r0
+ 320:	1f 90       	pop	r1
+ 322:	18 95       	reti
+
+00000324 <getUartCmdFormQueue>:
+    cmdQueue[queueCnt++] = cmd;
+}
+
+uint8_t getUartCmdFormQueue(void)
+{
+    uint8_t cmd = cmdQueue[0];
+ 324:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <cmdQueue>
+
+    for (uint8_t i = 0; i < queueCnt; ++i) {
+ 328:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <queueCnt>
+ 32c:	99 23       	and	r25, r25
+ 32e:	81 f0       	breq	.+32     	; 0x350 <getUartCmdFormQueue+0x2c>
+ 330:	90 e0       	ldi	r25, 0x00	; 0
+        cmdQueue[i] = cmdQueue[i+1];
+ 332:	29 2f       	mov	r18, r25
+ 334:	30 e0       	ldi	r19, 0x00	; 0
+ 336:	f9 01       	movw	r30, r18
+ 338:	e2 59       	subi	r30, 0x92	; 146
+ 33a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 33c:	40 81       	ld	r20, Z
+ 33e:	f9 01       	movw	r30, r18
+ 340:	e3 59       	subi	r30, 0x93	; 147
+ 342:	ff 4f       	sbci	r31, 0xFF	; 255
+ 344:	40 83       	st	Z, r20
+
+uint8_t getUartCmdFormQueue(void)
+{
+    uint8_t cmd = cmdQueue[0];
+
+    for (uint8_t i = 0; i < queueCnt; ++i) {
+ 346:	9f 5f       	subi	r25, 0xFF	; 255
+ 348:	20 91 6c 00 	lds	r18, 0x006C	; 0x80006c <queueCnt>
+ 34c:	92 17       	cp	r25, r18
+ 34e:	88 f3       	brcs	.-30     	; 0x332 <getUartCmdFormQueue+0xe>
+        cmdQueue[i] = cmdQueue[i+1];
+    }
+    cmdQueue[queueCnt--] = 0;
+ 350:	e0 91 6c 00 	lds	r30, 0x006C	; 0x80006c <queueCnt>
+ 354:	9f ef       	ldi	r25, 0xFF	; 255
+ 356:	9e 0f       	add	r25, r30
+ 358:	90 93 6c 00 	sts	0x006C, r25	; 0x80006c <queueCnt>
+ 35c:	f0 e0       	ldi	r31, 0x00	; 0
+ 35e:	e3 59       	subi	r30, 0x93	; 147
+ 360:	ff 4f       	sbci	r31, 0xFF	; 255
+ 362:	10 82       	st	Z, r1
+
+    return cmd;
+}
+ 364:	08 95       	ret
+
+00000366 <isCmdQueueEmpty>:
+    return (queueCnt == SIZE_OF_CMD_QUEUE - 1) ? true : false;
+}
+
+bool isCmdQueueEmpty(void)
+{
+    return (queueCnt == 0) ? true : false;
+ 366:	90 91 6c 00 	lds	r25, 0x006C	; 0x80006c <queueCnt>
+ 36a:	81 e0       	ldi	r24, 0x01	; 1
+ 36c:	91 11       	cpse	r25, r1
+ 36e:	80 e0       	ldi	r24, 0x00	; 0
+ 370:	08 95       	ret
+
+00000372 <main>:
+
+volatile bool isTick = false;
 
 int main(void)
 {
- 36e:	cf 93       	push	r28
- 370:	df 93       	push	r29
- 372:	00 d0       	rcall	.+0      	; 0x374 <main+0x6>
- 374:	00 d0       	rcall	.+0      	; 0x376 <main+0x8>
- 376:	cd b7       	in	r28, 0x3d	; 61
- 378:	de b7       	in	r29, 0x3e	; 62
-    QueueElement element;
-    
     uartInit();
- 37a:	8e df       	rcall	.-228    	; 0x298 <uartInit>
-    
-    DDRD |= _BV(DDD6);
- 37c:	8e 9a       	sbi	0x11, 6	; 17
-    DDRB |= _BV(DDB2);
- 37e:	ba 9a       	sbi	0x17, 2	; 23
-
-    PORTD |= _BV(PD6);
- 380:	96 9a       	sbi	0x12, 6	; 18
-    PORTB &= ~_BV(PB2);
- 382:	c2 98       	cbi	0x18, 2	; 24
+ 372:	89 df       	rcall	.-238    	; 0x286 <uartInit>
+    ledInit();
+ 374:	bc de       	rcall	.-648    	; 0xee <ledInit>
+    pwmInit();
+ 376:	3d df       	rcall	.-390    	; 0x1f2 <pwmInit>
 
     sei(); // Global enable interrupt
- 384:	78 94       	sei
+ 378:	78 94       	sei
     /* Replace with your application code */
-    while (1)
-    {
-        if (getQueueElement(&element) == true) {
- 386:	ce 01       	movw	r24, r28
- 388:	01 96       	adiw	r24, 0x01	; 1
- 38a:	36 d0       	rcall	.+108    	; 0x3f8 <getQueueElement>
- 38c:	88 23       	and	r24, r24
- 38e:	d9 f3       	breq	.-10     	; 0x386 <main+0x18>
-            (* element.func)();
- 390:	eb 81       	ldd	r30, Y+3	; 0x03
- 392:	fc 81       	ldd	r31, Y+4	; 0x04
- 394:	09 95       	icall
- 396:	f7 cf       	rjmp	.-18     	; 0x386 <main+0x18>
+    for(;;) {
+        if (isTick == true) {
+ 37a:	80 91 75 00 	lds	r24, 0x0075	; 0x800075 <isTick>
+ 37e:	88 23       	and	r24, r24
+ 380:	e1 f3       	breq	.-8      	; 0x37a <main+0x8>
+            isTick = false;
+ 382:	10 92 75 00 	sts	0x0075, r1	; 0x800075 <isTick>
+            if (!isCmdQueueEmpty()) {
+ 386:	ef df       	rcall	.-34     	; 0x366 <isCmdQueueEmpty>
+ 388:	81 11       	cpse	r24, r1
+ 38a:	f7 cf       	rjmp	.-18     	; 0x37a <main+0x8>
+                uint8_t cmd = getUartCmdFormQueue();
+ 38c:	cb df       	rcall	.-106    	; 0x324 <getUartCmdFormQueue>
+ 38e:	c8 2f       	mov	r28, r24
+                uint8_t param = cmd & 0x0F;
+                cmd = (cmd >> 4) & 0x0F;
+                Func action = getActionByRxCommand(cmd);
+ 390:	82 95       	swap	r24
+ 392:	8f 70       	andi	r24, 0x0F	; 15
+ 394:	a3 de       	rcall	.-698    	; 0xdc <getActionByRxCommand>
+ 396:	fc 01       	movw	r30, r24
+                if (action != NULL) {
+ 398:	89 2b       	or	r24, r25
+ 39a:	79 f3       	breq	.-34     	; 0x37a <main+0x8>
+                    (* action)(param);
+ 39c:	8c 2f       	mov	r24, r28
+ 39e:	8f 70       	andi	r24, 0x0F	; 15
+ 3a0:	09 95       	icall
+ 3a2:	eb cf       	rjmp	.-42     	; 0x37a <main+0x8>
 
-00000398 <setQueueElement>:
-#define SIZE_OF_QUEUE ((uint8_t) 8)
+000003a4 <__divmodhi4>:
+ 3a4:	97 fb       	bst	r25, 7
+ 3a6:	07 2e       	mov	r0, r23
+ 3a8:	16 f4       	brtc	.+4      	; 0x3ae <__divmodhi4+0xa>
+ 3aa:	00 94       	com	r0
+ 3ac:	06 d0       	rcall	.+12     	; 0x3ba <__divmodhi4_neg1>
+ 3ae:	77 fd       	sbrc	r23, 7
+ 3b0:	08 d0       	rcall	.+16     	; 0x3c2 <__divmodhi4_neg2>
+ 3b2:	0b d0       	rcall	.+22     	; 0x3ca <__udivmodhi4>
+ 3b4:	07 fc       	sbrc	r0, 7
+ 3b6:	05 d0       	rcall	.+10     	; 0x3c2 <__divmodhi4_neg2>
+ 3b8:	3e f4       	brtc	.+14     	; 0x3c8 <__divmodhi4_exit>
 
-static QueueElement queue[SIZE_OF_QUEUE];
+000003ba <__divmodhi4_neg1>:
+ 3ba:	90 95       	com	r25
+ 3bc:	81 95       	neg	r24
+ 3be:	9f 4f       	sbci	r25, 0xFF	; 255
+ 3c0:	08 95       	ret
 
-bool setQueueElement(QueueElement * element)
-{
- 398:	cf 93       	push	r28
- 39a:	df 93       	push	r29
-    for (uint8_t i = 0; i < SIZE_OF_QUEUE; ++i) {
-        if (queue[i].func == NULL) {
- 39c:	20 91 64 00 	lds	r18, 0x0064	; 0x800064 <queue+0x2>
- 3a0:	30 91 65 00 	lds	r19, 0x0065	; 0x800065 <queue+0x3>
- 3a4:	23 2b       	or	r18, r19
- 3a6:	51 f0       	breq	.+20     	; 0x3bc <setQueueElement+0x24>
- 3a8:	e8 e6       	ldi	r30, 0x68	; 104
- 3aa:	f0 e0       	ldi	r31, 0x00	; 0
- 3ac:	21 e0       	ldi	r18, 0x01	; 1
- 3ae:	30 e0       	ldi	r19, 0x00	; 0
- 3b0:	b9 01       	movw	r22, r18
- 3b2:	40 81       	ld	r20, Z
- 3b4:	51 81       	ldd	r21, Z+1	; 0x01
- 3b6:	45 2b       	or	r20, r21
- 3b8:	a9 f4       	brne	.+42     	; 0x3e4 <setQueueElement+0x4c>
- 3ba:	02 c0       	rjmp	.+4      	; 0x3c0 <setQueueElement+0x28>
- 3bc:	60 e0       	ldi	r22, 0x00	; 0
- 3be:	70 e0       	ldi	r23, 0x00	; 0
-            queue[i] = *element;
- 3c0:	66 0f       	add	r22, r22
- 3c2:	77 1f       	adc	r23, r23
- 3c4:	66 0f       	add	r22, r22
- 3c6:	77 1f       	adc	r23, r23
- 3c8:	fb 01       	movw	r30, r22
- 3ca:	ee 59       	subi	r30, 0x9E	; 158
- 3cc:	ff 4f       	sbci	r31, 0xFF	; 255
- 3ce:	ec 01       	movw	r28, r24
- 3d0:	88 81       	ld	r24, Y
- 3d2:	99 81       	ldd	r25, Y+1	; 0x01
- 3d4:	aa 81       	ldd	r26, Y+2	; 0x02
- 3d6:	bb 81       	ldd	r27, Y+3	; 0x03
- 3d8:	80 83       	st	Z, r24
- 3da:	91 83       	std	Z+1, r25	; 0x01
- 3dc:	a2 83       	std	Z+2, r26	; 0x02
- 3de:	b3 83       	std	Z+3, r27	; 0x03
-            return true;
- 3e0:	81 e0       	ldi	r24, 0x01	; 1
- 3e2:	07 c0       	rjmp	.+14     	; 0x3f2 <setQueueElement+0x5a>
- 3e4:	2f 5f       	subi	r18, 0xFF	; 255
- 3e6:	3f 4f       	sbci	r19, 0xFF	; 255
- 3e8:	34 96       	adiw	r30, 0x04	; 4
+000003c2 <__divmodhi4_neg2>:
+ 3c2:	70 95       	com	r23
+ 3c4:	61 95       	neg	r22
+ 3c6:	7f 4f       	sbci	r23, 0xFF	; 255
 
-static QueueElement queue[SIZE_OF_QUEUE];
+000003c8 <__divmodhi4_exit>:
+ 3c8:	08 95       	ret
 
-bool setQueueElement(QueueElement * element)
-{
-    for (uint8_t i = 0; i < SIZE_OF_QUEUE; ++i) {
- 3ea:	28 30       	cpi	r18, 0x08	; 8
- 3ec:	31 05       	cpc	r19, r1
- 3ee:	01 f7       	brne	.-64     	; 0x3b0 <setQueueElement+0x18>
-        if (queue[i].func == NULL) {
-            queue[i] = *element;
-            return true;
-        }
-    }
-    return false;
- 3f0:	80 e0       	ldi	r24, 0x00	; 0
-}
- 3f2:	df 91       	pop	r29
- 3f4:	cf 91       	pop	r28
- 3f6:	08 95       	ret
+000003ca <__udivmodhi4>:
+ 3ca:	aa 1b       	sub	r26, r26
+ 3cc:	bb 1b       	sub	r27, r27
+ 3ce:	51 e1       	ldi	r21, 0x11	; 17
+ 3d0:	07 c0       	rjmp	.+14     	; 0x3e0 <__udivmodhi4_ep>
 
-000003f8 <getQueueElement>:
+000003d2 <__udivmodhi4_loop>:
+ 3d2:	aa 1f       	adc	r26, r26
+ 3d4:	bb 1f       	adc	r27, r27
+ 3d6:	a6 17       	cp	r26, r22
+ 3d8:	b7 07       	cpc	r27, r23
+ 3da:	10 f0       	brcs	.+4      	; 0x3e0 <__udivmodhi4_ep>
+ 3dc:	a6 1b       	sub	r26, r22
+ 3de:	b7 0b       	sbc	r27, r23
 
-bool getQueueElement(QueueElement * element)
-{
-    if (queue[0].func != NULL) {
- 3f8:	20 91 64 00 	lds	r18, 0x0064	; 0x800064 <queue+0x2>
- 3fc:	30 91 65 00 	lds	r19, 0x0065	; 0x800065 <queue+0x3>
- 400:	23 2b       	or	r18, r19
- 402:	f1 f0       	breq	.+60     	; 0x440 <__LOCK_REGION_LENGTH__+0x40>
-        *element = queue[0];
- 404:	40 91 62 00 	lds	r20, 0x0062	; 0x800062 <queue>
- 408:	50 91 63 00 	lds	r21, 0x0063	; 0x800063 <queue+0x1>
- 40c:	60 91 64 00 	lds	r22, 0x0064	; 0x800064 <queue+0x2>
- 410:	70 91 65 00 	lds	r23, 0x0065	; 0x800065 <queue+0x3>
- 414:	fc 01       	movw	r30, r24
- 416:	40 83       	st	Z, r20
- 418:	51 83       	std	Z+1, r21	; 0x01
- 41a:	62 83       	std	Z+2, r22	; 0x02
- 41c:	73 83       	std	Z+3, r23	; 0x03
- 41e:	e2 e6       	ldi	r30, 0x62	; 98
- 420:	f0 e0       	ldi	r31, 0x00	; 0
- 422:	2e e7       	ldi	r18, 0x7E	; 126
- 424:	30 e0       	ldi	r19, 0x00	; 0
-        for (uint8_t i = 1; i < SIZE_OF_QUEUE; ++i) {
-            queue[i-1] = queue[i];
- 426:	84 81       	ldd	r24, Z+4	; 0x04
- 428:	95 81       	ldd	r25, Z+5	; 0x05
- 42a:	a6 81       	ldd	r26, Z+6	; 0x06
- 42c:	b7 81       	ldd	r27, Z+7	; 0x07
- 42e:	81 93       	st	Z+, r24
- 430:	91 93       	st	Z+, r25
- 432:	a1 93       	st	Z+, r26
- 434:	b1 93       	st	Z+, r27
+000003e0 <__udivmodhi4_ep>:
+ 3e0:	88 1f       	adc	r24, r24
+ 3e2:	99 1f       	adc	r25, r25
+ 3e4:	5a 95       	dec	r21
+ 3e6:	a9 f7       	brne	.-22     	; 0x3d2 <__udivmodhi4_loop>
+ 3e8:	80 95       	com	r24
+ 3ea:	90 95       	com	r25
+ 3ec:	bc 01       	movw	r22, r24
+ 3ee:	cd 01       	movw	r24, r26
+ 3f0:	08 95       	ret
 
-bool getQueueElement(QueueElement * element)
-{
-    if (queue[0].func != NULL) {
-        *element = queue[0];
-        for (uint8_t i = 1; i < SIZE_OF_QUEUE; ++i) {
- 436:	e2 17       	cp	r30, r18
- 438:	f3 07       	cpc	r31, r19
- 43a:	a9 f7       	brne	.-22     	; 0x426 <__LOCK_REGION_LENGTH__+0x26>
-            queue[i-1] = queue[i];
-        }
-        return true;
- 43c:	81 e0       	ldi	r24, 0x01	; 1
- 43e:	08 95       	ret
-    }
-    return false;
- 440:	80 e0       	ldi	r24, 0x00	; 0
-}
- 442:	08 95       	ret
+000003f2 <memcpy_P>:
+ 3f2:	fb 01       	movw	r30, r22
+ 3f4:	dc 01       	movw	r26, r24
+ 3f6:	02 c0       	rjmp	.+4      	; 0x3fc <memcpy_P+0xa>
+ 3f8:	05 90       	lpm	r0, Z+
+ 3fa:	0d 92       	st	X+, r0
+ 3fc:	41 50       	subi	r20, 0x01	; 1
+ 3fe:	50 40       	sbci	r21, 0x00	; 0
+ 400:	d8 f7       	brcc	.-10     	; 0x3f8 <memcpy_P+0x6>
+ 402:	08 95       	ret
 
-00000444 <_exit>:
- 444:	f8 94       	cli
+00000404 <_exit>:
+ 404:	f8 94       	cli
 
-00000446 <__stop_program>:
- 446:	ff cf       	rjmp	.-2      	; 0x446 <__stop_program>
+00000406 <__stop_program>:
+ 406:	ff cf       	rjmp	.-2      	; 0x406 <__stop_program>

@@ -4,17 +4,21 @@
 
 app\cmd.c
 
-drv\led.c
+drv\button.c
 
-drv\pwm.c
+drv\led.c
 
 hal\gpio.c
 
-hal\timer1.c
+hal\tim2.c
+
+hal\tim1.c
 
 hal\uart.c
 
 main.c
+
+mdw\pwm.c
 
 os\queue.c
 

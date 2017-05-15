@@ -1,6 +1,6 @@
 #include "app/cmd.h"
 #include "drv/led.h"
-#include "drv/pwm.h"
+#include "mdw/pwm.h"
 #include "main.h"
 
 #include <avr/io.h>
@@ -8,22 +8,22 @@
 #include <stddef.h>
 
 const uint8_t ledIlluminationLevelTable[16] PROGMEM = {
-    [0] = LED_ILLUMINATION_LEVEL_0,
-    [1] = LED_ILLUMINATION_LEVEL_1,
-    [2] = LED_ILLUMINATION_LEVEL_2,
-    [3] = LED_ILLUMINATION_LEVEL_3,
-    [4] = LED_ILLUMINATION_LEVEL_4,
-    [5] = LED_ILLUMINATION_LEVEL_5,
-    [6] = LED_ILLUMINATION_LEVEL_6,
-    [7] = LED_ILLUMINATION_LEVEL_7,
-    [8] = LED_ILLUMINATION_LEVEL_8,
-    [9] = LED_ILLUMINATION_LEVEL_9,
-    [10] = LED_ILLUMINATION_LEVEL_10,
-    [11] = LED_ILLUMINATION_LEVEL_11,
-    [12] = LED_ILLUMINATION_LEVEL_12,
-    [13] = LED_ILLUMINATION_LEVEL_13,
-    [14] = LED_ILLUMINATION_LEVEL_14,
-    [15] = LED_ILLUMINATION_LEVEL_15,
+    LED_ILLUMINATION_LEVEL_0,
+    LED_ILLUMINATION_LEVEL_1,
+    LED_ILLUMINATION_LEVEL_2,
+    LED_ILLUMINATION_LEVEL_3,
+    LED_ILLUMINATION_LEVEL_4,
+    LED_ILLUMINATION_LEVEL_5,
+    LED_ILLUMINATION_LEVEL_6,
+    LED_ILLUMINATION_LEVEL_7,
+    LED_ILLUMINATION_LEVEL_8,
+    LED_ILLUMINATION_LEVEL_9,
+    LED_ILLUMINATION_LEVEL_10,
+    LED_ILLUMINATION_LEVEL_11,
+    LED_ILLUMINATION_LEVEL_12,
+    LED_ILLUMINATION_LEVEL_13,
+    LED_ILLUMINATION_LEVEL_14,
+    LED_ILLUMINATION_LEVEL_15,
 };
 
 typedef enum {
@@ -43,7 +43,11 @@ static const Func cmd2func[] PROGMEM = {
 
 void SourceIndicator(uint8_t param)
 {
-    ledOff();
+    switch (param)
+    {
+        case 0x0A: switchLedTo(NONE); break;
+        default: break;
+    }
 }
 
 void ButtonRepeatInterval(uint8_t interval)
@@ -58,7 +62,7 @@ void PanelIlluminationLevel(uint8_t level)
 
 void AudioSource(uint8_t source)
 {
-    ledSet((LedSource)source, ON);
+    switchLedTo((LedSource)source);
 }
 
 Func getActionByRxCommand(uint8_t command)

@@ -1,59 +1,46 @@
 #include "drv/led.h"
 #include "hal/gpio.h"
 
+#include <avr/pgmspace.h>
+
 #include "main.h"
 
-#define LED_LVL(name, lvl) GPIO_LVL_ ## lvl(LED_PORTx_ ## name, LED_Pxn_ ## name)
-#define LED_DIR(name, dir) GPIO_DIR_ ## dir(LED_DDRx_ ## name, LED_DDxn_ ## name)
+static LedSource prevSource = NONE;
+static LedState prevState = OFF;
 
-#define LED(name, dir, lvl) \
-do {                        \
-    LED_LVL(name, lvl);     \
-    LED_DIR(name, dir);     \
-} while(0)                  \
+static const GpioStruct led[] PROGMEM = {
+    [AM] = GPIO_STRUCT_INIT(D, 2),
+    [FM] = GPIO_STRUCT_INIT(D, 3),
+    [WB] = GPIO_STRUCT_INIT(D, 4),
+    [SXM] = GPIO_STRUCT_INIT(D, 5),
+    [BT] = GPIO_STRUCT_INIT(D, 6),
+    [AUX] = GPIO_STRUCT_INIT(D, 7),
+    [USB] = GPIO_STRUCT_INIT(B, 0),
+};
+
+static void setLed(LedSource source, LedState state)
+{
+    GpioStruct * gpio = getGpioStructFromFlash(&led[source]);
+
+    setGpioState(gpio, state);
+}
 
 void ledInit(void)
 {
-    ledOff();
-}
+    for(LedSource source = AM; source < NUM_OF_LEDS; ++source) {
+        GpioStruct * gpio = getGpioStructFromFlash(&led[source]);
 
-void ledSet(LedSource source, LedState state)
-{
-
-    ledOff();
-
-    if (state == ON) {
-        switch (source) {
-        case AM: LED(AM, O, 1); break;
-        case FM: LED(FM, O, 1); break;
-        case WB: LED(WB, O, 1); break;
-        case SXM:LED(SXM, O, 1); break;
-        case BT: LED(BT, O, 1); break;
-        case AUX: LED(AUX, O, 1); break;
-        case USB: LED(USB, O, 1); break;
-        default: break;
-        }
-    } else {
-        switch (source) {
-        case AM: LED(AM, O, 0); break;
-        case FM: LED(FM, O, 0); break;
-        case WB: LED(WB, O, 0); break;
-        case SXM: LED(SXM, O, 0); break;
-        case BT: LED(BT, O, 0); break;
-        case AUX: LED(AUX, O, 0); break;
-        case USB: LED(USB, O, 0); break;
-        default: break;
-        }
+        setGpioDirection(gpio, OUTPUT);
+        setGpioState(gpio, LOW);
     }
 }
 
-void ledOff(void)
+void switchLedTo(LedSource nextSource)
 {
-    LED(AM, O, 0);
-    LED(FM, O, 0);
-    LED(WB, O, 0);
-    LED(SXM, O, 0);
-    LED(BT, O, 0);
-    LED(AUX, O, 0);
-    LED(USB, O, 0);
+    if (nextSource != prevSource) {
+        if (prevState == ON)
+            setLed(prevSource, prevState = OFF);
+        if ((prevSource = nextSource) != NONE)
+            setLed(nextSource, prevState = ON);
+    }
 }

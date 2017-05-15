@@ -1,6 +1,8 @@
 #ifndef LED_H_
 #define LED_H_
 
+#include <avr/io.h>
+
 typedef enum {
     AM,
     FM,
@@ -9,6 +11,9 @@ typedef enum {
     BT,
     AUX,
     USB,
+
+    NONE,
+    NUM_OF_LEDS = NONE,
 } LedSource;
 
 typedef enum {
@@ -17,7 +22,6 @@ typedef enum {
 } LedState;
 
 void ledInit(void);
-void ledSet(LedSource source, LedState state);
-void ledOff(void);
+void switchLedTo(LedSource nextSource);
 
 #endif /* LED_H_ */

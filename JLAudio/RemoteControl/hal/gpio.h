@@ -1,16 +1,37 @@
 #ifndef GPIO_H_
 #define GPIO_H_
 
-/* GPIO direction as input */
-#define GPIO_DIR_I(DDRx, DDxn) DDRx &= ~_BV(DDxn)
+#include <avr/io.h>
+#include <avr/pgmspace.h>
 
-/* GPIO direction as output */
-#define GPIO_DIR_O(DDRx, DDxn) DDRx |= _BV(DDxn)
+#define GPIO_STRUCT_INIT(X, N)  \
+{                               \
+    .ddr = &DDR ## X,           \
+    .port = &PORT ## X,         \
+    .pin = &PIN ## X,           \
+    .mask = _BV(N),             \
+}                               \
 
-/* GPIO level is low */
-#define GPIO_LVL_0(PORTx, Pxn) PORTx &= ~_BV(Pxn)
+typedef enum {
+    INPUT,
+    OUTPUT,
+} GpioDirection;
 
-/* GPIO level is high */
-#define GPIO_LVL_1(PORTx, Pxn) PORTx |= _BV(Pxn)
+typedef enum {
+    LOW,
+    HIGH,
+} GpioState;
+
+typedef struct {
+    volatile uint8_t * ddr;
+    volatile uint8_t * port;
+    volatile uint8_t * pin;
+    uint8_t mask;
+} GpioStruct;
+
+void setGpioDirection(GpioStruct * gpio, GpioDirection direction);
+void setGpioState(GpioStruct * gpio, GpioState state);
+GpioState getGpioState(GpioStruct * gpio);
+GpioStruct * getGpioStructFromFlash(PGM_VOID_P pgmGpio);
 
 #endif /* GPIO_H_ */

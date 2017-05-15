@@ -1,0 +1,100 @@
+<HtermSequenceFile>
+    <ItemList>
+        <SequenceItem name="AM">
+            <description></description>
+            <sequence value="h[89] h[D0] h[59]" />
+        </SequenceItem>
+        <SequenceItem name="FM">
+            <description></description>
+            <sequence value="h[89] h[D1] h[5A]" />
+        </SequenceItem>
+        <SequenceItem name="WB">
+            <description></description>
+            <sequence value="h[89] h[D2] h[5B]" />
+        </SequenceItem>
+        <SequenceItem name="SXM">
+            <description></description>
+            <sequence value="h[89] h[D3] h[5C]" />
+        </SequenceItem>
+        <SequenceItem name="BT">
+            <description></description>
+            <sequence value="h[89] h[D4] h[5D]" />
+        </SequenceItem>
+        <SequenceItem name="AUX">
+            <description></description>
+            <sequence value="h[89] h[D5] h[5E]" />
+        </SequenceItem>
+        <SequenceItem name="USB">
+            <description></description>
+            <sequence value="h[89] h[D6] h[5F]" />
+        </SequenceItem>
+        <SequenceItem name="OFF">
+            <description></description>
+            <sequence value="h[89] h[9A] h[23]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_0">
+            <description></description>
+            <sequence value="h[89] h[C0] h[49]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_1">
+            <description></description>
+            <sequence value="h[89] h[C1] h[4A]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_2">
+            <description></description>
+            <sequence value="h[89] h[C2] h[4B]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_3">
+            <description></description>
+            <sequence value="h[89] h[C3] h[4C]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_4">
+            <description></description>
+            <sequence value="h[89] h[C4] h[4D]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_5">
+            <description></description>
+            <sequence value="h[89] h[C5] h[4E]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_6">
+            <description></description>
+            <sequence value="h[89] h[C6] h[4F]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_7">
+            <description></description>
+            <sequence value="h[89] h[C7] h[50]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_8">
+            <description></description>
+            <sequence value="h[89] h[C8] h[51]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_9">
+            <description></description>
+            <sequence value="h[89] h[C9] h[52]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_10">
+            <description></description>
+            <sequence value="h[89] h[CA] h[53]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_11">
+            <description></description>
+            <sequence value="h[89] h[CB] h[54]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_12">
+            <description></description>
+            <sequence value="h[89] h[CC] h[55]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_13">
+            <description></description>
+            <sequence value="h[89] h[CD] h[56]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_14">
+            <description></description>
+            <sequence value="h[89] h[CE] h[57]" />
+        </SequenceItem>
+        <SequenceItem name="LVL_15">
+            <description></description>
+            <sequence value="h[89] h[CF] h[58]" />
+        </SequenceItem>
+    </ItemList>
+</HtermSequenceFile>
