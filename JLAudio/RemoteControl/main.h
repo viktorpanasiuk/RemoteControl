@@ -10,6 +10,21 @@
 
 #define NUM_OF(array) (sizeof(array) / sizeof(array[0]))
 
+typedef enum {
+    SEEK_RELEASE        = ((uint8_t) 0xA0),
+    SEEK_LEFT_SINGLE    = ((uint8_t) 0xA1),
+    SEEK_RIGHT_SINGLE   = ((uint8_t) 0xA2),
+    PLAY_PAUSE_SINGLE   = ((uint8_t) 0xA3),
+    SOURCE_SINGLE       = ((uint8_t) 0xA4),
+    VOLUME_DOWN_SINGLE  = ((uint8_t) 0xA5),
+    VOLUME_UP_SINGLE    = ((uint8_t) 0xA6),
+    SEEK_LEFT_HOLD      = ((uint8_t) 0xA9),
+    SEEK_RIGHT_HOLD     = ((uint8_t) 0xAA),
+    PLAY_PAUSE_HOLD     = ((uint8_t) 0xAB),
+    SOURCE_HOLD         = ((uint8_t) 0xAC),
+    UNKNOWN_
+} UartTxCmd;
+
 #define LED_ILLUMINATION_LEVEL_0    ((uint8_t) 0)
 #define LED_ILLUMINATION_LEVEL_1    ((uint8_t) 2)
 #define LED_ILLUMINATION_LEVEL_2    ((uint8_t) 4)
